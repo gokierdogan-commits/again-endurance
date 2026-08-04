@@ -65,7 +65,7 @@ export function Hero() {
                 Shop my gear
               </Button>
               <Button href="/coaching" size="lg" variant="ghost">
-                Apply for coaching
+                Apply to Work With Me
                 <ArrowRight size={15} aria-hidden="true" />
               </Button>
             </div>

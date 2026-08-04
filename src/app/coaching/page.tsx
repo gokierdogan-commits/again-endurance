@@ -6,11 +6,11 @@ import { siteConfig } from '@/data/site'
 
 export const metadata: Metadata = {
   title: 'Work With Me',
-  description: `From walking to running consistently. ${siteConfig.tagline}`,
+  description: `Build a running habit that lasts. ${siteConfig.tagline}`,
   alternates: { canonical: `${siteConfig.url}/coaching` },
   openGraph: {
     title: `Work With Me | ${siteConfig.name}`,
-    description: "I'm looking for 5 people who want support building a consistent running habit.",
+    description: "I'm looking for five people who want accountability, guidance, and a structured plan to become more consistent runners.",
   },
 }
 
@@ -24,20 +24,23 @@ export default function CoachingPage() {
             Work With Me
           </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-copy tracking-tighter mb-6">
-            From walking to running consistently.
+            Build a running habit that lasts.
           </h1>
           <p className="text-copy-2 text-lg max-w-2xl leading-relaxed mb-4">
-            I&apos;m looking for 5 people who want support building a consistent
-            running habit.
+            I&apos;m looking for five people who want accountability, guidance, and
+            a structured plan to become more consistent runners — whether
+            you&apos;re starting from scratch, returning after a break, or training
+            for your next goal.
           </p>
           <p className="text-copy-2 max-w-2xl leading-relaxed">
-            This is for beginners, people returning after a long break, or anyone
-            who feels too heavy, too slow, or not fit enough to call themselves a
-            runner. We&apos;ll focus on building consistency, accountability,
-            realistic progress, and making running fit around your life.
+            My goal isn&apos;t just to help you finish a race. It&apos;s to help you
+            build a running habit that fits your life and lasts. Together
+            we&apos;ll focus on consistency, realistic progress, accountability,
+            and enjoying the process. Every plan is tailored to your current
+            fitness level and your personal goals.
           </p>
           <p className="text-sm text-accent font-medium mt-6">
-            Only 5 spots available.
+            Currently accepting 5 people.
           </p>
         </div>
       </section>
@@ -91,11 +94,12 @@ export default function CoachingPage() {
             <div className="space-y-6">
               <div>
                 <h2 id="form-heading" className="text-2xl sm:text-3xl font-bold text-copy mb-4">
-                  Apply.
+                  Apply to work with me.
                 </h2>
                 <p className="text-copy-2 text-sm leading-relaxed">
-                  Fill in the application below. I&apos;ll review your situation and
-                  reach out if it looks like a good fit.
+                  Tell me a bit about yourself and where you&apos;re starting from.
+                  I&apos;ll read every application myself and reach out if it looks
+                  like a good fit.
                 </p>
               </div>
 

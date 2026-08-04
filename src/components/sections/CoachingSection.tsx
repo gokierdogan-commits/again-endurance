@@ -20,32 +20,34 @@ export function CoachingSection() {
                 Work With Me
               </p>
               <h2 id="coaching-heading" className="text-3xl sm:text-4xl font-bold text-copy mb-4">
-                From walking to running consistently.
+                Build a running habit that lasts.
               </h2>
               <p className="text-copy-2 text-lg leading-relaxed mb-4">
-                I&apos;m looking for 5 people who want support building a consistent
-                running habit.
+                I&apos;m looking for five people who want accountability, guidance, and
+                a structured plan to become more consistent runners — whether
+                you&apos;re starting from scratch, returning after a break, or
+                training for your next goal.
               </p>
               <p className="text-copy-2 leading-relaxed">
-                This is for beginners, people returning after a long break, or anyone
-                who feels too heavy, too slow, or not fit enough to call themselves a
-                runner.
+                My goal isn&apos;t just to help you finish a race. It&apos;s to help
+                you build a running habit that fits your life and lasts.
               </p>
               <p className="text-copy-2 leading-relaxed mt-4">
-                We&apos;ll focus on building consistency, accountability, realistic
-                progress, and making running fit around your life.
+                Together we&apos;ll focus on consistency, realistic progress,
+                accountability, and enjoying the process. Every plan is tailored to
+                your current fitness level and your personal goals.
               </p>
             </div>
 
             {/* CTA */}
             <div className="space-y-3">
+              <p className="text-xs text-accent font-medium">
+                Currently accepting 5 people.
+              </p>
               <Button href="/coaching" size="lg" variant="primary">
-                Apply
+                Apply to Work With Me
                 <ArrowRight size={15} aria-hidden="true" />
               </Button>
-              <p className="text-xs text-accent font-medium">
-                Only 5 spots available.
-              </p>
             </div>
 
             {/* Disclaimer */}
