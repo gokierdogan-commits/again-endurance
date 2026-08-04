@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -41,6 +41,7 @@ const errorClass = 'flex items-start gap-1.5 text-xs text-danger mt-1.5'
 export function CoachingForm() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [serverError, setServerError] = useState<string>('')
+  const successRef = useRef<HTMLDivElement>(null)
 
   const {
     register,
@@ -48,6 +49,14 @@ export function CoachingForm() {
     formState: { errors },
     reset,
   } = useForm<FormData>({ resolver: zodResolver(schema) })
+
+  // On mobile the success message renders much shorter than the form it
+  // replaces, so the scroll position can land past it — bring it into view.
+  useEffect(() => {
+    if (status === 'success') {
+      successRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  }, [status])
 
   async function onSubmit(data: FormData) {
     setStatus('loading')
@@ -71,7 +80,7 @@ export function CoachingForm() {
 
   if (status === 'success') {
     return (
-      <div className="border border-edge p-8 text-center space-y-4">
+      <div ref={successRef} className="border border-edge p-8 text-center space-y-4">
         <CheckCircle size={32} className="text-ok mx-auto" aria-hidden="true" />
         <h3 className="text-lg font-semibold text-copy">Application received.</h3>
         <p className="text-copy-2 text-sm leading-relaxed max-w-sm mx-auto">

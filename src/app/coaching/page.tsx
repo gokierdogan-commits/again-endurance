@@ -28,7 +28,7 @@ export default function CoachingPage() {
           </h1>
           <p className="text-copy-2 text-lg max-w-2xl leading-relaxed mb-4">
             I&apos;m looking for five people who want accountability, guidance, and
-            a structured plan to become more consistent runners — whether
+            a structured plan to become more consistent runners, whether
             you&apos;re starting from scratch, returning after a break, or training
             for your next goal.
           </p>

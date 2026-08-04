@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --yes tsc --noEmit)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(curl -s --max-time 30 http://127.0.0.1:3002/ -o /tmp/home-dash.html -w \"home: %{http_code}\\\\n\")",
+      "Bash(curl -s --max-time 30 http://127.0.0.1:3002/coaching -o /tmp/coaching-dash.html -w \"coaching: %{http_code}\\\\n\")"
+    ]
+  }
+}
