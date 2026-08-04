@@ -92,7 +92,7 @@ export function Header() {
             {/* Desktop CTA + mobile hamburger */}
             <div className="flex items-center gap-4">
               <Link
-                href="/coaching"
+                href="/coaching#apply"
                 className="hidden lg:inline-flex items-center gap-2 px-5 py-2 text-sm font-medium text-bg bg-accent hover:bg-accent-2 transition-colors duration-150"
               >
                 Apply
@@ -158,7 +158,7 @@ export function Header() {
             ))}
             <li className="pt-4 border-t border-edge mt-2">
               <Link
-                href="/coaching"
+                href="/coaching#apply"
                 className="block py-3 text-base font-medium text-accent"
               >
                 Apply →

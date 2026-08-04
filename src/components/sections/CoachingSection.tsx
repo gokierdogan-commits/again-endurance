@@ -44,7 +44,7 @@ export function CoachingSection() {
               <p className="text-xs text-accent font-medium">
                 Currently accepting 5 people.
               </p>
-              <Button href="/coaching" size="lg" variant="primary">
+              <Button href="/coaching#apply" size="lg" variant="primary">
                 Apply to Work With Me
                 <ArrowRight size={15} aria-hidden="true" />
               </Button>

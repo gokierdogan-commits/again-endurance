@@ -64,7 +64,7 @@ export function Hero() {
               <Button href="/products" size="lg" variant="primary">
                 Shop my gear
               </Button>
-              <Button href="/coaching" size="lg" variant="ghost">
+              <Button href="/coaching#apply" size="lg" variant="ghost">
                 Apply to Work With Me
                 <ArrowRight size={15} aria-hidden="true" />
               </Button>

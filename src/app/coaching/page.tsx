@@ -86,7 +86,7 @@ export default function CoachingPage() {
       </section>
 
       {/* Application form */}
-      <section aria-labelledby="form-heading" className="py-16 lg:py-24">
+      <section id="apply" aria-labelledby="form-heading" className="scroll-mt-16 lg:scroll-mt-18 py-16 lg:py-24">
         <div className="site-container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start">
 
