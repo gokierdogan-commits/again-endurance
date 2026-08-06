@@ -14,7 +14,7 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
 
           {/* ── Portrait ──────────────────────────────── */}
-          <div className="lg:col-span-2 order-last lg:order-first">
+          <div className="lg:col-span-2">
             <div className="relative aspect-[3/4] w-full max-w-[360px] mx-auto lg:max-w-none overflow-hidden">
               <Image
                 src="/images/hero/hero.jpg"
@@ -69,6 +69,9 @@ export function Hero() {
                 <ArrowRight size={15} aria-hidden="true" />
               </Button>
             </div>
+            <p className="text-copy-3 text-xs -mt-4">
+              A small pilot helping 5 people build a consistent running habit.
+            </p>
 
             {/* Social links */}
             <SocialLinks />

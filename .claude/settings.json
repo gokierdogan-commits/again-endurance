@@ -4,7 +4,11 @@
       "Bash(npx --yes tsc --noEmit)",
       "Bash(echo \"exit: $?\")",
       "Bash(curl -s --max-time 30 http://127.0.0.1:3002/ -o /tmp/home-dash.html -w \"home: %{http_code}\\\\n\")",
-      "Bash(curl -s --max-time 30 http://127.0.0.1:3002/coaching -o /tmp/coaching-dash.html -w \"coaching: %{http_code}\\\\n\")"
+      "Bash(curl -s --max-time 30 http://127.0.0.1:3002/coaching -o /tmp/coaching-dash.html -w \"coaching: %{http_code}\\\\n\")",
+      "Bash(curl -s --max-time 30 http://127.0.0.1:3002/ -o /tmp/hero-check.html -w \"code=%{http_code}\\\\n\")",
+      "Bash(curl -s --max-time 30 http://127.0.0.1:3002/ -o /tmp/hero-check3.html -w \"code=%{http_code}\\\\n\")",
+      "Bash(git commit -m 'Fix hero image order on mobile, rename Gear nav to Shop Gear, add Work With Me intro line *)",
+      "Bash(git push *)"
     ]
   }
 }
