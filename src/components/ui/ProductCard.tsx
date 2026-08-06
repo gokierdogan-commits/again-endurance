@@ -83,17 +83,24 @@ export function ProductCard({ product }: ProductCardProps) {
 
       {/* Content */}
       <div className="flex flex-col flex-1 p-5 gap-4">
-        {/* Category + discount */}
+        {/* Category + trust badge + discount */}
         <div className="flex items-center justify-between gap-2">
           <span className="text-[10px] tracking-widest uppercase text-copy-3 font-medium">
             {categoryLabel}
           </span>
-          {product.discountCode && (
-            <span className="flex items-center gap-1 text-[10px] tracking-wider uppercase text-accent border border-accent-dim px-2 py-0.5">
-              <Tag size={9} aria-hidden="true" />
-              {product.discountCode}
-            </span>
-          )}
+          <div className="flex items-center gap-1.5">
+            {product.badge && (
+              <span className="text-[10px] tracking-wider uppercase text-copy-2 border border-edge px-2 py-0.5">
+                {product.badge}
+              </span>
+            )}
+            {product.discountCode && (
+              <span className="flex items-center gap-1 text-[10px] tracking-wider uppercase text-accent border border-accent-dim px-2 py-0.5">
+                <Tag size={9} aria-hidden="true" />
+                {product.discountCode}
+              </span>
+            )}
+          </div>
         </div>
 
         {/* Name */}
@@ -108,9 +115,11 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Why I use it */}
         <div className="border-t border-edge pt-4 flex-1">
-          <p className="text-[11px] tracking-widest uppercase text-copy-3 mb-2 font-medium">
-            Why I use it
-          </p>
+          {!product.hideWhyLabel && (
+            <p className="text-[11px] tracking-widest uppercase text-copy-3 mb-2 font-medium">
+              Why I use it
+            </p>
+          )}
           <p className="text-sm text-copy-2 leading-relaxed">
             {product.whyIUseIt}
           </p>

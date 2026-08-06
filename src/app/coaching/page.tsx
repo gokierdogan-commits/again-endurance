@@ -1,8 +1,11 @@
 import type { Metadata } from 'next'
-import { XCircle } from 'lucide-react'
+import { Check, XCircle } from 'lucide-react'
 import { CoachingForm } from '@/components/ui/CoachingForm'
 import { coachingDisclaimer, coachingNotFor } from '@/data/coaching'
 import { siteConfig } from '@/data/site'
+
+const whoFor = ['Beginners', 'Returning after a break', 'Struggling with consistency']
+const whatYouGet = ['Accountability', 'Weekly feedback', 'Personal guidance', 'A habit that lasts']
 
 export const metadata: Metadata = {
   title: 'Work With Me',
@@ -26,20 +29,40 @@ export default function CoachingPage() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-copy tracking-tighter mb-6">
             Build a running habit that lasts.
           </h1>
-          <p className="text-copy-2 text-lg max-w-2xl leading-relaxed mb-4">
-            I&apos;m looking for five people who want accountability, guidance, and
-            a structured plan to become more consistent runners, whether
-            you&apos;re starting from scratch, returning after a break, or training
-            for your next goal.
+          <p className="text-copy-2 text-lg max-w-2xl leading-relaxed mb-8">
+            For people who don&apos;t think of themselves as runners yet.
           </p>
-          <p className="text-copy-2 max-w-2xl leading-relaxed">
-            My goal isn&apos;t just to help you finish a race. It&apos;s to help you
-            build a running habit that fits your life and lasts. Together
-            we&apos;ll focus on consistency, realistic progress, accountability,
-            and enjoying the process. Every plan is tailored to your current
-            fitness level and your personal goals.
-          </p>
-          <p className="text-sm text-accent font-medium mt-6">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mb-8">
+            <div>
+              <p className="text-[10px] tracking-widest uppercase text-copy-3 font-medium mb-3">
+                Who it&apos;s for
+              </p>
+              <ul className="space-y-2">
+                {whoFor.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-copy-2">
+                    <Check size={14} className="text-accent shrink-0 mt-0.5" aria-hidden="true" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="text-[10px] tracking-widest uppercase text-copy-3 font-medium mb-3">
+                You&apos;ll get
+              </p>
+              <ul className="space-y-2">
+                {whatYouGet.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-copy-2">
+                    <Check size={14} className="text-accent shrink-0 mt-0.5" aria-hidden="true" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <p className="text-sm text-accent font-medium">
             Currently accepting 5 people.
           </p>
         </div>
@@ -54,9 +77,8 @@ export default function CoachingPage() {
                 What to expect.
               </h2>
               <p className="text-copy-2 text-sm leading-relaxed">
-                This is a small pilot, not a fixed program. Every plan starts from
-                where you actually are, not where you think you should be. Some
-                weeks go well. Some don&apos;t. Both get planned for.
+                A small pilot, not a fixed program. Some weeks go well. Some
+                don&apos;t. Both get planned for.
               </p>
             </div>
 

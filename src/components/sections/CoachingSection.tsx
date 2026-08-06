@@ -1,7 +1,10 @@
 import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Check } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { coachingDisclaimer } from '@/data/coaching'
+
+const whoFor = ['Beginners', 'Returning after a break', 'Struggling with consistency']
+const whatYouGet = ['Accountability', 'Weekly feedback', 'Personal guidance', 'A habit that lasts']
 
 export function CoachingSection() {
   return (
@@ -22,21 +25,39 @@ export function CoachingSection() {
               <h2 id="coaching-heading" className="text-3xl sm:text-4xl font-bold text-copy mb-4">
                 Build a running habit that lasts.
               </h2>
-              <p className="text-copy-2 text-lg leading-relaxed mb-4">
-                I&apos;m looking for five people who want accountability, guidance, and
-                a structured plan to become more consistent runners, whether
-                you&apos;re starting from scratch, returning after a break, or
-                training for your next goal.
+              <p className="text-copy-2 text-lg leading-relaxed">
+                For people who don&apos;t think of themselves as runners yet.
               </p>
-              <p className="text-copy-2 leading-relaxed">
-                My goal isn&apos;t just to help you finish a race. It&apos;s to help
-                you build a running habit that fits your life and lasts.
-              </p>
-              <p className="text-copy-2 leading-relaxed mt-4">
-                Together we&apos;ll focus on consistency, realistic progress,
-                accountability, and enjoying the process. Every plan is tailored to
-                your current fitness level and your personal goals.
-              </p>
+            </div>
+
+            {/* Who it's for / What you get */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div>
+                <p className="text-[10px] tracking-widest uppercase text-copy-3 font-medium mb-3">
+                  Who it&apos;s for
+                </p>
+                <ul className="space-y-2">
+                  {whoFor.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-copy-2">
+                      <Check size={14} className="text-accent shrink-0 mt-0.5" aria-hidden="true" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="text-[10px] tracking-widest uppercase text-copy-3 font-medium mb-3">
+                  You&apos;ll get
+                </p>
+                <ul className="space-y-2">
+                  {whatYouGet.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-copy-2">
+                      <Check size={14} className="text-accent shrink-0 mt-0.5" aria-hidden="true" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             {/* CTA */}

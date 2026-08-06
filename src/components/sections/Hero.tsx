@@ -30,12 +30,15 @@ export function Hero() {
           {/* ── Text content ──────────────────────────── */}
           <div className="lg:col-span-3 flex flex-col gap-7">
 
-            {/* Name + location */}
+            {/* Brand + name */}
             <div>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-black text-copy leading-[0.95] tracking-tighter">
-                Gökhan<br />Erdogan
+              <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-[6.5rem] font-black text-copy leading-[0.9] tracking-tighter">
+                Again<span className="text-accent">.</span>
               </h1>
-              <p className="mt-4 flex items-center gap-1.5 text-copy-2 text-sm tracking-wider">
+              <p className="text-copy-2 text-lg sm:text-xl font-medium mt-2">
+                Gökhan Erdogan
+              </p>
+              <p className="mt-3 flex items-center gap-1.5 text-copy-2 text-sm tracking-wider">
                 <MapPin size={12} aria-hidden="true" />
                 Endurance athlete · {siteConfig.location}
               </p>
@@ -44,9 +47,9 @@ export function Hero() {
             {/* Divider */}
             <div className="w-10 h-px bg-accent" aria-hidden="true" />
 
-            {/* Brand tag */}
-            <p className="text-accent text-sm font-semibold tracking-[0.2em] uppercase">
-              Again.
+            {/* Brand line */}
+            <p className="text-copy-3 text-xs -mt-3">
+              Not a comeback. Just showing up again.
             </p>
 
             {/* Headline */}

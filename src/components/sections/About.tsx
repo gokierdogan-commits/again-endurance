@@ -1,5 +1,28 @@
 import Image from 'next/image'
 
+const stages = [
+  {
+    id: 'problem',
+    label: 'Problem',
+    text: "At 204 cm and 138 kg, most running advice didn't apply to me.",
+  },
+  {
+    id: 'first-step',
+    label: 'First step',
+    text: "I didn't start running. I started walking, and changed how I ate.",
+  },
+  {
+    id: 'transformation',
+    label: 'Transformation',
+    text: 'Running started around 110 kg. Short, slow runs at first. Then a half marathon. A marathon. A 100 km ultra, seven half marathons in seven days, a 66 km relay around the lake, all within about a year. Not one breakthrough. Just repeated decisions.',
+  },
+  {
+    id: 'mission',
+    label: 'Mission',
+    text: 'Now I document what actually works, and help a few people build the same habit.',
+  },
+]
+
 export function About() {
   return (
     <section id="about" aria-labelledby="about-heading" className="scroll-mt-16 lg:scroll-mt-18 py-20 lg:py-28 border-b border-edge">
@@ -30,27 +53,27 @@ export function About() {
               </h2>
             </div>
 
-            <div className="space-y-5 text-copy-2 leading-relaxed">
-              <p>
-                At around 138 kg, I started walking. Not running, just walking, and
-                changing how I ate.
-              </p>
-              <p>
-                The weight came off slowly. Running came later, at around 110 kg, and the
-                first runs were short, slow, and nothing special.
-              </p>
-              <p>
-                Same body. Different data over time.
-              </p>
-              <p>
-                A half marathon led to a marathon. A marathon led to a 100 km
-                ultramarathon, less than a year after I started running. Not one big
-                breakthrough. Just small decisions, repeated often enough.
-              </p>
+            <div className="space-y-6 text-copy-2 leading-relaxed">
+              {stages.map((stage) => (
+                <div key={stage.id}>
+                  <p className="text-[10px] tracking-widest uppercase text-copy-3 font-medium mb-1.5">
+                    {stage.label}
+                  </p>
+                  <p>{stage.text}</p>
+                </div>
+              ))}
             </div>
 
             <div className="border-t border-edge pt-6 space-y-2">
               <dl className="space-y-2">
+                <div className="flex gap-4">
+                  <dt className="text-xs tracking-widest uppercase text-copy-3 w-28 shrink-0">Starting weight</dt>
+                  <dd className="text-sm text-copy-2">138 kg</dd>
+                </div>
+                <div className="flex gap-4">
+                  <dt className="text-xs tracking-widest uppercase text-copy-3 w-28 shrink-0">Now</dt>
+                  <dd className="text-sm text-copy-2">~108 kg</dd>
+                </div>
                 <div className="flex gap-4">
                   <dt className="text-xs tracking-widest uppercase text-copy-3 w-28 shrink-0">Based in</dt>
                   <dd className="text-sm text-copy-2">Zürich, Switzerland</dd>

@@ -12,18 +12,15 @@ export interface Product {
   imagePosition?: string
   shortDescription: string
   whyIUseIt: string
+  /** When true, ProductCard omits the "Why I use it" label above whyIUseIt — varies card rhythm. */
+  hideWhyLabel?: boolean
+  /** Short trust badge, e.g. "100 km Tested", "Race Day". Shown next to the category label. */
+  badge?: string
   affiliateUrl: string
   discountCode?: string
   discountDescription?: string
   featured: boolean
   available: boolean
-}
-
-export interface Stat {
-  id: string
-  value: string
-  label: string
-  sublabel?: string
 }
 
 export interface Social {

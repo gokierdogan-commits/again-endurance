@@ -16,7 +16,7 @@ export const siteConfig = {
 
   /** Supporting line shown in hero */
   supportingLine:
-    "This isn't a highlight reel. It's a record of what actually worked.",
+    "Everything here is something I've actually used, for months, in actual training.",
 
   brand: 'Again.',
   location: 'Zürich, Switzerland',

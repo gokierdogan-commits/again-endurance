@@ -23,7 +23,7 @@ export const faqItems: FaqItem[] = [
     id: 'beginners',
     question: 'Is this suitable for complete beginners?',
     answer:
-      'Yes. This is for people at all starting points, including those beginning from a very low fitness base or returning after a long break. The approach is adjusted to where you are, not where you think you should be.',
+      'Yes — including people starting from a very low fitness base or coming back after a long break.',
   },
   {
     id: 'training-plans',
