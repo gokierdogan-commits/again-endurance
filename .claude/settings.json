@@ -12,7 +12,11 @@
       "Bash(curl -s -o /tmp/prod-hero-check.html -w \"HTTP %{http_code}\\\\n\" \"https://again-endurance-woad.vercel.app/\")",
       "Bash(curl -s --max-time 30 http://127.0.0.1:3002/ -o /tmp/home-bigedit.html -w \"code=%{http_code}\\\\n\")",
       "Bash(curl -s --max-time 60 http://127.0.0.1:3002/products -o /tmp/products-bigedit.html -w \"code=%{http_code}\\\\n\")",
-      "Bash(curl -s --max-time 30 http://127.0.0.1:3002/ -o /tmp/proof-final.html -w \"code=%{http_code}\\\\n\")"
+      "Bash(curl -s --max-time 30 http://127.0.0.1:3002/ -o /tmp/proof-final.html -w \"code=%{http_code}\\\\n\")",
+      "Bash(git commit -m 'Rework site as a premium endurance brand, not a portfolio *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} -> \" -L --max-redirs 5 -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" \"https://amzn.to/3TUic2L\")",
+      "Bash(curl -s -o /dev/null -w \"%{url_effective}\\\\n\" -L --max-redirs 5 -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" \"https://amzn.to/3TUic2L\")",
+      "Bash(curl -s --compressed -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0 Safari/537.36\" \"https://www.amazon.de/ASICS-Unisex-Metaspeed-Laufschuh-Velvet/dp/B09WC4NW89\" -o /tmp/amz_metaspeed2.html)"
     ]
   }
 }
