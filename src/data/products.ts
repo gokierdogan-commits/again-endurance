@@ -59,11 +59,11 @@ export const products: Product[] = [
   },
   {
     id: 'shoe-asics-metaspeed-edge',
-    name: 'ASICS Metaspeed Edge',
+    name: 'ASICS Metaspeed Sky 2',
     category: 'running-shoes',
     image: '/images/products/asics_metaspeed-edge.jpeg',
     shortDescription: 'My marathon racing shoe.',
-    whyIUseIt: 'Good for tall people and strides. At 204 cm my stride is longer than most reviews are written for, and the plate geometry in the Edge actually works with that instead of against it.',
+    whyIUseIt: 'Good for tall people and strides. At 204 cm my stride is longer than most reviews are written for, and the plate geometry in the Sky 2 actually works with that instead of against it.',
     badge: 'Race Day',
     affiliateUrl: 'https://amzn.to/3TUic2L',
     discountCode: undefined,
