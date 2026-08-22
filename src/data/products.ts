@@ -304,6 +304,19 @@ export const products: Product[] = [
     featured: false,
     available: true,
   },
+  {
+    id: 'shorts-adidas-adi365',
+    name: 'adidas Adi365 Running Shorts',
+    category: 'clothing',
+    image: '/images/products/adidas-adi365-shorts.jpg',
+    shortDescription: '[TODO: What runs you wear these for]',
+    whyIUseIt: '[TODO: Fit, liner, durability, what you have noticed]',
+    affiliateUrl: 'https://amzn.to/4wDji0p',
+    discountCode: undefined,
+    discountDescription: undefined,
+    featured: false,
+    available: true,
+  },
 
   // ─── Cycling ──────────────────────────────────────────
   {
