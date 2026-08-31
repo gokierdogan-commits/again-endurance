@@ -12,6 +12,7 @@ export const AnalyticsEvent = {
   CONTACT_FORM_SUBMIT: 'contact_form_submit',
   SOCIAL_CLICK: 'social_click',
   PARTNERSHIP_ENQUIRY: 'partnership_enquiry',
+  LINKS_PAGE_CLICK: 'links_page_click',
 } as const
 
 type EventName = typeof AnalyticsEvent[keyof typeof AnalyticsEvent]

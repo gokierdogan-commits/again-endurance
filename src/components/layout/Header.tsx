@@ -49,6 +49,9 @@ export function Header() {
     return pathname === href || pathname.startsWith(href + '/')
   }
 
+  // Standalone bio-link page — no site chrome
+  if (pathname === '/links') return null
+
   return (
     <>
       <header

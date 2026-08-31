@@ -1,9 +1,16 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { siteConfig } from '@/data/site'
 import { SocialLinks } from '@/components/ui/SocialLinks'
 
 export function Footer() {
+  const pathname = usePathname()
   const year = new Date().getFullYear()
+
+  // Standalone bio-link page — no site chrome
+  if (pathname === '/links') return null
 
   return (
     <footer className="bg-surface border-t border-edge" aria-label="Site footer">
