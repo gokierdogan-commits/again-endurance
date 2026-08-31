@@ -3,8 +3,8 @@
  * Change values here — they propagate across metadata, footer, forms, and SEO.
  */
 export const siteConfig = {
-  /** Public domain — update before going live */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://again-endurance.com',
+  /** Public domain — update once a custom domain is connected in Vercel */
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://again-endurance-woad.vercel.app',
 
   name: 'Gökhan Erdogan',
   title: 'Gökhan Erdogan, Endurance Athlete',
