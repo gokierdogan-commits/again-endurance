@@ -14,7 +14,7 @@ export interface BioLink {
  */
 export const bioLinks: BioLink[] = [
   { id: 'gear', label: 'Shop my gear', href: '/products' },
-  { id: 'coaching', label: 'Want to run 100 km too? Apply for free coaching', href: '/coaching#apply' },
+  { id: 'coaching', label: 'Want to build the habit? Apply for free coaching', href: '/coaching#apply' },
   { id: 'website', label: 'Visit the website', href: siteConfig.url, external: true },
   ...socials.map((s) => ({
     id: s.id,
