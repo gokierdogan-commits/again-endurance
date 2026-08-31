@@ -29,8 +29,11 @@ export default function LinksPage() {
         <p className="text-3xl font-black text-copy tracking-tighter mb-1">
           Again<span className="text-accent">.</span>
         </p>
-        <p className="text-copy-2 text-sm mb-8">
+        <p className="text-copy-2 text-sm mb-3">
           Gökhan Erdogan · Endurance athlete
+        </p>
+        <p className="text-copy text-sm leading-relaxed mb-8">
+          From 138 kg to 100 km. I help people build the habit, not chase talent.
         </p>
 
         {/* Links */}
