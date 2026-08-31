@@ -1,11 +1,49 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Globe, ShoppingBag, HeartHandshake } from 'lucide-react'
+import { siInstagram, siStrava, siTiktok } from 'simple-icons'
 import { bioLinks } from '@/data/links'
 import { trackEvent, AnalyticsEvent } from '@/lib/analytics'
 
-const linkClass = 'group flex items-center justify-between w-full px-5 py-4 border border-edge text-copy hover:border-accent hover:text-accent transition-colors duration-150'
+const linkClass = 'group flex items-center gap-3 w-full px-5 py-4 border border-edge text-copy hover:border-accent hover:text-accent transition-colors duration-150'
+
+const lucideIcons = {
+  website: Globe,
+  gear: ShoppingBag,
+  coaching: HeartHandshake,
+} as const
+
+const brandIcons = {
+  instagram: siInstagram,
+  strava: siStrava,
+  tiktok: siTiktok,
+} as const
+
+function LinkIcon({ id }: { id: string }) {
+  const Lucide = lucideIcons[id as keyof typeof lucideIcons]
+  if (Lucide) {
+    return <Lucide size={18} className="shrink-0" aria-hidden="true" />
+  }
+
+  const brand = brandIcons[id as keyof typeof brandIcons]
+  if (brand) {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        width={18}
+        height={18}
+        fill="currentColor"
+        className="shrink-0"
+        aria-hidden="true"
+      >
+        <path d={brand.path} />
+      </svg>
+    )
+  }
+
+  return null
+}
 
 export function BioLinkList() {
   function handleClick(label: string) {
@@ -17,10 +55,11 @@ export function BioLinkList() {
       {bioLinks.map((link) => {
         const content = (
           <>
-            <span className="text-sm font-medium tracking-wide">{link.label}</span>
+            <LinkIcon id={link.id} />
+            <span className="text-sm font-medium tracking-wide flex-1 text-left">{link.label}</span>
             <ArrowUpRight
               size={16}
-              className="text-copy-3 group-hover:text-accent transition-colors duration-150"
+              className="text-copy-3 group-hover:text-accent transition-colors duration-150 shrink-0"
               aria-hidden="true"
             />
           </>
