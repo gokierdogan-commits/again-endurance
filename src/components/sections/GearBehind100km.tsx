@@ -19,7 +19,7 @@ export function GearBehind100km() {
             The gear behind my 100 km.
           </h2>
           <p className="text-copy-2 max-w-xl">
-            Everything I used for my 100 km run.
+            Key gear I used for my 100 km run.
           </p>
         </div>
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteConfig.url}/products` },
   openGraph: {
     title: `My Gear | ${siteConfig.name}`,
-    description: "Everything I used for my 100 km run, and what's still in my kit for everyday training.",
+    description: "Key gear I used for my 100 km run, and what's still in my kit for everyday training.",
   },
 }
 
