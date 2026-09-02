@@ -23,6 +23,8 @@ export interface Product {
   usedFor100km?: boolean
   /** Real price in EUR (Amazon.de), when known. Drives the "Under CHF 50" section — leave unset rather than guessing. */
   priceEUR?: number
+  /** Short 1–2 word use-case label for the compact "My Top Picks" tile, e.g. "Long runs", "Race day". */
+  useCase?: string
   affiliateUrl: string
   discountCode?: string
   discountDescription?: string
