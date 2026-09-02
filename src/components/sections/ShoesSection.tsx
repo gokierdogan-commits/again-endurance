@@ -1,15 +1,11 @@
 import { ProductGrid } from '@/components/ui/ProductGrid'
-import { CompactProductCard } from '@/components/ui/CompactProductCard'
 import { getShoes } from '@/data/products'
 
 export function ShoesSection() {
-  const items = getShoes()
+  // Already shown as a full card in "The Gear Behind My 100 km" — no need
+  // to reference it again here, even compactly.
+  const items = getShoes().filter((p) => !p.usedFor100km)
   if (items.length === 0) return null
-
-  // Already shown as a full card in "The Gear Behind My 100 km" —
-  // reference it compactly here instead of repeating the full card.
-  const fullItems = items.filter((p) => !p.usedFor100km)
-  const alreadyFeatured = items.filter((p) => p.usedFor100km)
 
   return (
     <section aria-labelledby="shoes-heading" className="py-16 lg:py-20 border-b border-edge">
@@ -26,14 +22,7 @@ export function ShoesSection() {
           </p>
         </div>
 
-        <ProductGrid products={fullItems} />
-        {alreadyFeatured.length > 0 && (
-          <div className="mt-3 space-y-2">
-            {alreadyFeatured.map((product) => (
-              <CompactProductCard key={product.id} product={product} variant="featured-elsewhere" />
-            ))}
-          </div>
-        )}
+        <ProductGrid products={items} />
       </div>
     </section>
   )
