@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { CategoryFilter } from '@/components/ui/CategoryFilter'
-import { ProductCard } from '@/components/ui/ProductCard'
+import { ProductGrid } from '@/components/ui/ProductGrid'
 import { AffiliateDisclosure } from '@/components/ui/AffiliateDisclosure'
 import { categories, products } from '@/data/products'
 import { isValidAffiliateUrl } from '@/lib/utils'
@@ -80,11 +80,7 @@ export function FeaturedProducts({ showAll = false }: FeaturedProductsProps) {
 
         {/* Product grid */}
         {filtered.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-edge">
-            {filtered.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+          <ProductGrid products={filtered} />
         ) : (
           <div className="py-16 text-center text-copy-3 text-sm border border-edge">
             No products in this category yet.

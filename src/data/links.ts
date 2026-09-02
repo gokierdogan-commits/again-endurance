@@ -13,7 +13,7 @@ export interface BioLink {
  * Keep this short — it's meant to be scanned in a few seconds.
  */
 export const bioLinks: BioLink[] = [
-  { id: 'gear', label: 'Shop my gear', href: '/products' },
+  { id: 'gear', label: 'See what I use', href: '/products' },
   { id: 'coaching', label: 'Want to build the habit? Apply for free coaching', href: '/coaching#apply' },
   { id: 'website', label: 'Visit the website', href: siteConfig.url, external: true },
   ...socials.map((s) => ({

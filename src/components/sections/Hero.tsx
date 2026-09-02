@@ -65,7 +65,7 @@ export function Hero() {
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
               <Button href="/products" size="lg" variant="primary">
-                Shop my gear
+                See what I use
               </Button>
               <Button href="/coaching#apply" size="lg" variant="ghost">
                 Apply to Work With Me

@@ -12,10 +12,17 @@ export interface Product {
   imagePosition?: string
   shortDescription: string
   whyIUseIt: string
-  /** When true, ProductCard omits the "Why I use it" label above whyIUseIt — varies card rhythm. */
-  hideWhyLabel?: boolean
-  /** Short trust badge, e.g. "100 km Tested", "Race Day". Shown next to the category label. */
+  /** Short trust badge shown as the card's eyebrow, e.g. "100 km Tested", "Race Day". */
   badge?: string
+  /**
+   * For running shoes only — the shoe's job in the rotation, e.g. "My Long-Run Shoe".
+   * Shown as the card eyebrow instead of `badge` in the Shoes section.
+   */
+  role?: string
+  /** True only when existing copy actually ties this product to the 100 km run. Drives the "Gear Behind My 100 km" section. */
+  usedFor100km?: boolean
+  /** Real price in EUR (Amazon.de), when known. Drives the "Under CHF 50" section — leave unset rather than guessing. */
+  priceEUR?: number
   affiliateUrl: string
   discountCode?: string
   discountDescription?: string

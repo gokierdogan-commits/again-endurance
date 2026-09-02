@@ -39,7 +39,7 @@ export function Footer() {
             </p>
             <ul className="space-y-2.5">
               {[
-                { href: '/products', label: 'Shop Gear' },
+                { href: '/products', label: 'My Gear' },
                 { href: '/coaching', label: 'Work With Me' },
                 { href: '/#about', label: 'About' },
                 { href: '/#faq', label: 'FAQ' },

@@ -19,7 +19,9 @@ export const categories: Category[] = [
  * 1. Replace the [TODO] values with actual product details
  * 2. Add the product image to /public/images/products/
  * 3. Replace affiliateUrl with your affiliate link
- * 4. Set featured: true for products you want on the homepage
+ * 4. Set featured: true for products you'd count among "My Essentials"
+ * 5. Set usedFor100km: true only if it genuinely was part of the 100 km setup
+ * 6. Set priceEUR to the real current price to have it show under "Essentials Under CHF 50"
  *
  * Affiliate URL format:
  * - Use your tracking link from the affiliate program
@@ -36,6 +38,8 @@ export const products: Product[] = [
     shortDescription: 'My softest shoe, for long runs and recovery days.',
     whyIUseIt: "At 204 cm, every stride loads more than most shoe reviews account for. The extra cushioning takes the edge off on long runs and the days after, not built for pace.",
     badge: '100 km Tested',
+    role: 'My Long-Run Shoe',
+    usedFor100km: true,
     affiliateUrl: 'https://amzn.to/4vFuiKp',
     discountCode: undefined,
     discountDescription: undefined,
@@ -49,8 +53,8 @@ export const products: Product[] = [
     image: '/images/products/adidas-boston-black.jpeg',
     shortDescription: 'The shoe I use for tempo sessions & race day',
     whyIUseIt: 'Quicker than my daily trainer for tempo sessions, without needing a taper to notice it.',
-    hideWhyLabel: true,
     badge: 'Tempo & Race Day',
+    role: 'My Tempo Shoe',
     affiliateUrl: 'https://amzn.to/4gSiyjP',
     discountCode: undefined,
     discountDescription: undefined,
@@ -65,6 +69,7 @@ export const products: Product[] = [
     shortDescription: 'My marathon racing shoe.',
     whyIUseIt: 'Good for tall people and strides. At 204 cm my stride is longer than most reviews are written for, and the plate geometry in the Sky 3 actually works with that instead of against it.',
     badge: 'Race Day',
+    role: 'My Race Shoe',
     affiliateUrl: 'https://amzn.to/45uUugc',
     discountCode: undefined,
     discountDescription: undefined,
@@ -79,6 +84,7 @@ export const products: Product[] = [
     shortDescription: 'What I use for long runs at a faster pace.',
     whyIUseIt: "Enough cushioning to hold up over distance, but responsive enough that I'm not fighting the shoe when I pick up the pace.",
     badge: 'Long Runs',
+    role: 'My Fast Long-Run Shoe',
     affiliateUrl: 'https://amzn.to/4qh7KON',
     discountCode: undefined,
     discountDescription: undefined,
@@ -93,6 +99,7 @@ export const products: Product[] = [
     shortDescription: 'My speed and tempo session shoe.',
     whyIUseIt: 'Roomy enough for bigger feet without sizing up, and bouncy enough to actually want to run fast in.',
     badge: 'Tempo & Speed',
+    role: 'My Speed Shoe',
     affiliateUrl: 'https://amzn.to/4g0gFAR',
     discountCode: undefined,
     discountDescription: undefined,
@@ -107,6 +114,7 @@ export const products: Product[] = [
     shortDescription: 'The shoe I wore for my 66 km relay around the lake.',
     whyIUseIt: 'Held up for the full 66 km without breaking down, which is the only test that matters for a shoe like this.',
     badge: '66 km Tested',
+    role: 'My Ultra Shoe',
     affiliateUrl: 'https://amzn.to/4g9Eu88',
     discountCode: undefined,
     discountDescription: undefined,
@@ -121,6 +129,7 @@ export const products: Product[] = [
     shortDescription: 'What I use for half marathon distance.',
     whyIUseIt: "My go-to for 21 km efforts. Enough cushioning to hold up, without feeling heavy by the second half.",
     badge: '21 km Tested',
+    role: 'My Half-Marathon Shoe',
     affiliateUrl: 'https://amzn.to/3TZfnh2',
     discountCode: undefined,
     discountDescription: undefined,
@@ -135,6 +144,7 @@ export const products: Product[] = [
     shortDescription: 'My go-to for easy days and long runs.',
     whyIUseIt: "The Fresh Foam X midsole is the most cushioned version New Balance makes. When comfort matters more than pace, this is the pair I reach for.",
     badge: 'Max Cushion',
+    role: 'My Recovery Shoe',
     affiliateUrl: 'https://amzn.to/4qRmQuP',
     discountCode: undefined,
     discountDescription: undefined,
@@ -149,6 +159,7 @@ export const products: Product[] = [
     shortDescription: 'One shoe for most of the week.',
     whyIUseIt: 'The ReactX foam and Air Zoom units make it responsive enough for a faster effort but forgiving enough for daily miles. Not a specialist, just reliable.',
     badge: 'All-Rounder',
+    role: 'My Everyday Trainer',
     affiliateUrl: 'https://amzn.to/4gEkc8p',
     discountCode: undefined,
     discountDescription: undefined,
@@ -164,8 +175,8 @@ export const products: Product[] = [
     image: '/images/products/garmin-fenix-8-padded-v3.png',
     shortDescription: 'The watch I recommend for serious marathon & ultra training. Built for performance.',
     whyIUseIt: 'Battery life that survives an ultra without a mid-run charge, and data worth looking at afterward.',
-    hideWhyLabel: true,
     badge: 'Ultra Tested',
+    usedFor100km: true,
     affiliateUrl: 'https://amzn.to/3Tbi3Ys',
     discountCode: undefined,
     discountDescription: undefined,
@@ -194,7 +205,6 @@ export const products: Product[] = [
     image: '/images/products/massage-gun-bob-brad.jpg',
     shortDescription: 'What I use for recovery after long runs and hard sessions.',
     whyIUseIt: "I reach for this on rest days and after long runs. Quiet enough for the evening, small enough to pack for races.",
-    hideWhyLabel: true,
     badge: 'Recovery Essential',
     affiliateUrl: 'https://amzn.to/4pU7ZPE',
     discountCode: undefined,
@@ -240,6 +250,8 @@ export const products: Product[] = [
     shortDescription: 'What I use for energy during long runs & marathon training. Easy on the stomach.',
     whyIUseIt: 'The one gel that has never once upset my stomach on a long run. After enough failed alternatives, that is the only thing that matters.',
     badge: 'Favourite',
+    // priceEUR: set this once you have the current price — this is genuinely a
+    // low-cost item and a strong "Under CHF 50" candidate.
     affiliateUrl: 'https://amzn.to/3Rre61e',
     discountCode: undefined,
     discountDescription: undefined,
@@ -253,8 +265,8 @@ export const products: Product[] = [
     image: '/images/products/salomon-adv-hydra-vest-4-padded-v5.png',
     shortDescription: 'The hydration vest I use for long trail runs & ultras',
     whyIUseIt: 'Enough capacity for a full day on trail without bouncing at pace.',
-    hideWhyLabel: true,
     badge: 'Still Using',
+    usedFor100km: true,
     affiliateUrl: 'https://amzn.to/4gXdWsV',
     discountCode: undefined,
     discountDescription: undefined,
@@ -269,6 +281,8 @@ export const products: Product[] = [
     shortDescription: 'Daily supplement I take for muscle strength and mental sharpness during heavy training blocks.',
     whyIUseIt: "3g of pure creatine monohydrate a day, no fillers. It's micro-fine so it dissolves clean in water without clumping, and I've noticed it helps not just with strength but with staying mentally sharp during high-volume weeks.",
     badge: 'Daily Staple',
+    // priceEUR: set this once you have the current price — this is genuinely a
+    // low-cost item and a strong "Under CHF 50" candidate.
     affiliateUrl: 'https://amzn.to/3TCg6V3',
     discountCode: undefined,
     discountDescription: undefined,
@@ -283,6 +297,8 @@ export const products: Product[] = [
     shortDescription: "A supplement I take every day during the winter months.",
     whyIUseIt: "Less sunlight means I'm more mindful of my vitamin D intake. I chose a vegan D3 combined with K2 in a simple once-daily tablet that fits easily into my routine.",
     badge: 'Winter Staple',
+    // priceEUR: set this once you have the current price — this is genuinely a
+    // low-cost item and a strong "Under CHF 50" candidate.
     affiliateUrl: 'https://amzn.to/4btuS6L',
     discountCode: undefined,
     discountDescription: undefined,
@@ -377,13 +393,49 @@ export const products: Product[] = [
   },
 ]
 
+/** True when a product is real (has an affiliate link and isn't a draft). */
+function isPublished(p: Product): boolean {
+  return p.available && p.affiliateUrl.startsWith('http') && p.affiliateUrl !== 'https://example.com'
+}
+
 /** Helper: get products by category */
 export function getProductsByCategory(categoryId: string): Product[] {
   if (categoryId === 'all') return products
   return products.filter((p) => p.category === categoryId)
 }
 
-/** Helper: get featured products */
+/** Helper: get featured products (used for the homepage teaser) */
 export function getFeaturedProducts(): Product[] {
   return products.filter((p) => p.featured && p.available)
+}
+
+/** "The Gear Behind My 100 km" — only products with explicit evidence in their copy. */
+export function get100kmGear(): Product[] {
+  return products.filter((p) => p.usedFor100km && isPublished(p))
+}
+
+/** "My Essentials" — reuses the existing `featured` flag as the single source of truth. */
+export function getEssentials(): Product[] {
+  return products.filter((p) => p.featured && isPublished(p))
+}
+
+/** "Essentials Under CHF 50" — only products with a real, confirmed price set. */
+export function getUnder50(): Product[] {
+  return products.filter((p) => p.priceEUR !== undefined && p.priceEUR < 50 && isPublished(p))
+}
+
+/** All published running shoes, for the dedicated Shoes section. */
+export function getShoes(): Product[] {
+  return products.filter((p) => p.category === 'running-shoes' && isPublished(p))
+}
+
+/** Published, non-shoe products grouped by category, for the categorised sections at the bottom. */
+export function getOtherCategoryGroups(): { category: Category; items: Product[] }[] {
+  return categories
+    .filter((c) => c.id !== 'all' && c.id !== 'running-shoes')
+    .map((category) => ({
+      category,
+      items: products.filter((p) => p.category === category.id && isPublished(p)),
+    }))
+    .filter((group) => group.items.length > 0)
 }
