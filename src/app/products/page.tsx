@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { GearBehind100km } from '@/components/sections/GearBehind100km'
-import { MyTopPicks } from '@/components/sections/MyTopPicks'
 import { EssentialsUnder50 } from '@/components/sections/EssentialsUnder50'
 import { ShoesSection } from '@/components/sections/ShoesSection'
 import { GearByCategory } from '@/components/sections/GearByCategory'
@@ -40,7 +39,6 @@ export default function ProductsPage() {
       </section>
 
       <GearBehind100km />
-      <MyTopPicks />
       <EssentialsUnder50 />
       <ShoesSection />
       <GearByCategory />

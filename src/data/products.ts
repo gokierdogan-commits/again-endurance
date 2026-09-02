@@ -420,19 +420,32 @@ export function get100kmGear(): Product[] {
   return products.filter((p) => p.usedFor100km && isPublished(p))
 }
 
-/** "My Essentials" — reuses the existing `featured` flag as the single source of truth. */
-export function getEssentials(): Product[] {
-  return products.filter((p) => p.featured && isPublished(p))
-}
-
 /** "Essentials Under CHF 50" — only products with a real, confirmed price set. */
 export function getUnder50(): Product[] {
   return products.filter((p) => p.priceEUR !== undefined && p.priceEUR < 50 && isPublished(p))
 }
 
-/** All published running shoes, for the dedicated Shoes section. */
+/**
+ * All published running shoes, ordered by use case for "My Shoe Rotation" —
+ * race day and long-run shoes first, the 100 km shoe last since it already
+ * has a full card above and only needs a compact reference here.
+ */
+const SHOE_ROTATION_ORDER = [
+  'shoe-asics-metaspeed-edge',
+  'shoe-asics-superblast-3',
+  'shoe-asics-novablast-5',
+  'shoe-adidas-boston',
+  'shoe-on-cloudmonster-2',
+  'shoe-on-cloudsurfer-max',
+  'shoe-new-balance-1080v14',
+  'shoe-nike-pegasus-41',
+  'shoe-asics-nimbus-28',
+]
+
 export function getShoes(): Product[] {
-  return products.filter((p) => p.category === 'running-shoes' && isPublished(p))
+  return products
+    .filter((p) => p.category === 'running-shoes' && isPublished(p))
+    .sort((a, b) => SHOE_ROTATION_ORDER.indexOf(a.id) - SHOE_ROTATION_ORDER.indexOf(b.id))
 }
 
 /** Published, non-shoe products grouped by category, for the categorised sections at the bottom. */
