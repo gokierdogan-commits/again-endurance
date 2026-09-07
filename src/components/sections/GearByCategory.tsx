@@ -24,7 +24,7 @@ export function GearByCategory() {
             Rest of the Kit
           </p>
           <h2 id="rest-of-kit-heading" className="text-2xl sm:text-3xl font-bold text-copy">
-            Everything else I use.
+            Other things I can recommend.
           </h2>
         </div>
 

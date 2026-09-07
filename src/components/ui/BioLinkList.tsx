@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { ArrowUpRight, Globe, ShoppingBag, HeartHandshake } from 'lucide-react'
-import { siInstagram, siStrava, siTiktok } from 'simple-icons'
+import { siInstagram, siStrava, siTiktok, siYoutube } from 'simple-icons'
 import { bioLinks } from '@/data/links'
 import { trackEvent, AnalyticsEvent } from '@/lib/analytics'
 
@@ -18,6 +18,7 @@ const brandIcons = {
   instagram: siInstagram,
   strava: siStrava,
   tiktok: siTiktok,
+  youtube: siYoutube,
 } as const
 
 function LinkIcon({ id }: { id: string }) {

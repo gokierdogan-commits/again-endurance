@@ -11,8 +11,9 @@ interface CompactProductCardProps {
   /**
    * 'tile' — small image + name + use-case, for the horizontal-scroll
    * "My Top Picks" strip.
-   * 'featured-elsewhere' — text-only reference row used when a product
-   * already got a full card in an earlier section (avoids repeating it).
+   * 'featured-elsewhere' — compact reference row (small thumbnail, no
+   * description) used when a product already got a full card in an
+   * earlier section (avoids repeating the full card).
    */
   variant: 'tile' | 'featured-elsewhere'
 }
@@ -68,9 +69,19 @@ export function CompactProductCard({ product, variant }: CompactProductCardProps
       rel="noopener noreferrer nofollow"
       onClick={handleClick}
       aria-label={`View ${product.name} (opens in new tab)`}
-      className="flex items-center justify-between gap-4 border border-edge bg-surface px-4 py-3 hover:border-copy-3 transition-colors duration-150"
+      className="flex items-center gap-3 border border-edge bg-surface px-4 py-3 hover:border-copy-3 transition-colors duration-150"
     >
-      <div className="min-w-0">
+      <div className="relative shrink-0 w-12 h-12 bg-surface-2 overflow-hidden">
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          style={{ objectPosition: product.imagePosition ?? 'center' }}
+          className="object-cover"
+          sizes="48px"
+        />
+      </div>
+      <div className="min-w-0 flex-1">
         {product.badge && (
           <p className="text-[10px] tracking-widest uppercase text-accent font-semibold mb-1">
             {product.badge}
