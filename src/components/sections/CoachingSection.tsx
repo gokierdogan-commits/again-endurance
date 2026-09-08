@@ -63,7 +63,7 @@ export function CoachingSection() {
             {/* CTA */}
             <div className="space-y-3">
               <p className="text-xs text-accent font-medium">
-                Currently accepting 5 people.
+                Currently accepting 2 people.
               </p>
               <Button href="/coaching#apply" size="lg" variant="primary">
                 Apply to Work With Me

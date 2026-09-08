@@ -63,7 +63,7 @@ export default function CoachingPage() {
           </div>
 
           <p className="text-sm text-accent font-medium">
-            Currently accepting 5 people.
+            Currently accepting 2 people.
           </p>
         </div>
       </section>
