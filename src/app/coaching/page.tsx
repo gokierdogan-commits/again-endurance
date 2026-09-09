@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteConfig.url}/coaching` },
   openGraph: {
     title: `Work With Me | ${siteConfig.name}`,
-    description: "I'm looking for five people who want accountability, guidance, and a structured plan to become more consistent runners.",
+    description: "I'm looking for five people who want accountability, guidance, and a structured plan to become more consistent runners. 3 spots already booked.",
   },
 }
 

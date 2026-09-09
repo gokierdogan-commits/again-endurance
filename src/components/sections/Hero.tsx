@@ -73,7 +73,7 @@ export function Hero() {
               </Button>
             </div>
             <p className="text-copy-3 text-xs -mt-4">
-              A small pilot helping 5 people build a consistent running habit.
+              A small pilot helping 5 people build a consistent running habit — 3 spots already booked.
             </p>
 
             {/* Social links */}
