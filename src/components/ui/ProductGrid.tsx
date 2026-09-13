@@ -6,7 +6,7 @@ import type { Product } from '@/types'
  * count (and row width) to the actual item count so a short row — e.g. a
  * category with only one product — never leaves empty grid tracks next to it.
  */
-export function ProductGrid({ products }: { products: Product[] }) {
+export function ProductGrid({ products, prioritizeFirst = false }: { products: Product[]; prioritizeFirst?: boolean }) {
   const count = products.length
   const gridClass =
     count === 1
@@ -17,8 +17,8 @@ export function ProductGrid({ products }: { products: Product[] }) {
 
   return (
     <div className={`grid ${gridClass} gap-px bg-edge`}>
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+      {products.map((product, i) => (
+        <ProductCard key={product.id} product={product} priority={prioritizeFirst && i === 0} />
       ))}
     </div>
   )

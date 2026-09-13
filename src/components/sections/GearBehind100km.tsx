@@ -23,7 +23,7 @@ export function GearBehind100km() {
           </p>
         </div>
 
-        <ProductGrid products={items} />
+        <ProductGrid products={items} prioritizeFirst />
       </div>
     </section>
   )

@@ -8,9 +8,10 @@ import type { Product } from '@/types'
 
 interface ProductCardProps {
   product: Product
+  priority?: boolean
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, priority = false }: ProductCardProps) {
   const hasValidUrl = isValidAffiliateUrl(product.affiliateUrl)
   // Role (shoe's job in the rotation) wins over the generic trust badge —
   // it's the more personal, specific proof point.
@@ -43,6 +44,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 src={product.image}
                 alt={product.name}
                 fill
+                priority={priority}
                 style={{ objectPosition: product.imagePosition ?? 'center' }}
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -53,6 +55,7 @@ export function ProductCard({ product }: ProductCardProps) {
               src={product.image}
               alt={product.name}
               fill
+              priority={priority}
               style={{ objectPosition: product.imagePosition ?? 'center' }}
               className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
