@@ -23,10 +23,4 @@ export const socials: Social[] = [
     href: 'https://www.tiktok.com/@theyogisda',
     ariaLabel: 'Follow on TikTok',
   },
-  {
-    id: 'youtube',
-    label: 'YouTube',
-    href: 'https://www.youtube.com/@TheYogisda',
-    ariaLabel: 'Subscribe on YouTube',
-  },
 ]

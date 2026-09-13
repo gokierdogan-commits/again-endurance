@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { Check } from 'lucide-react'
+import { Check, ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/Button'
 import { CoachingForm } from '@/components/ui/CoachingForm'
 import { siteConfig } from '@/data/site'
 
@@ -22,15 +23,17 @@ export default function CoachingPage() {
       {/* Page hero */}
       <section className="py-16 lg:py-24 border-b border-edge">
         <div className="site-container max-w-4xl">
-          <p className="text-[10px] tracking-widest uppercase text-accent font-medium mb-4">
-            Work With Me
-          </p>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-copy tracking-tighter mb-6">
             Build a running habit that lasts.
           </h1>
           <p className="text-copy-2 text-lg max-w-2xl leading-relaxed mb-8">
             For people who don&apos;t think of themselves as runners yet.
           </p>
+
+          <Button href="#apply" size="lg" variant="primary" className="mb-8">
+            Apply to Work With Me
+            <ArrowRight size={15} aria-hidden="true" />
+          </Button>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mb-8">
             <div>

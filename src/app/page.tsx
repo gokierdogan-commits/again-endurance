@@ -5,6 +5,7 @@ import { About } from '@/components/sections/About'
 import { FeaturedProducts } from '@/components/sections/FeaturedProducts'
 import { ProductCriteria } from '@/components/sections/ProductCriteria'
 import { CoachingSection } from '@/components/sections/CoachingSection'
+import { TrainingPlanPromo } from '@/components/sections/TrainingPlanPromo'
 import { FAQ } from '@/components/sections/FAQ'
 import { PartnershipContact } from '@/components/sections/PartnershipContact'
 import { siteConfig } from '@/data/site'
@@ -24,6 +25,7 @@ export default function HomePage() {
       <FeaturedProducts />
       <ProductCriteria />
       <CoachingSection />
+      <TrainingPlanPromo />
       <FAQ />
       <PartnershipContact />
     </>
