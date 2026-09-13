@@ -64,7 +64,6 @@ export function Footer() {
             <ul className="space-y-2.5">
               {[
                 { href: '/coaching#apply', label: 'Apply' },
-                { href: '/coaching#how-it-works', label: 'What to expect' },
                 { href: '/#partnerships', label: 'Partnerships' },
               ].map((link) => (
                 <li key={link.href}>

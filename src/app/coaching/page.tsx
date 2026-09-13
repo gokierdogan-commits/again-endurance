@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
-import { Check, XCircle } from 'lucide-react'
+import { Check } from 'lucide-react'
 import { CoachingForm } from '@/components/ui/CoachingForm'
-import { coachingDisclaimer, coachingNotFor } from '@/data/coaching'
 import { siteConfig } from '@/data/site'
 
 const whoFor = ['Beginners', 'Returning after a break', 'Struggling with consistency']
@@ -13,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteConfig.url}/coaching` },
   openGraph: {
     title: `Work With Me | ${siteConfig.name}`,
-    description: "I'm looking for five people who want accountability, guidance, and a structured plan to become more consistent runners. 3 spots already booked.",
+    description: "I'm looking for ten people who want accountability, guidance, and a structured plan to become more consistent runners. 3 spots already booked.",
   },
 }
 
@@ -62,48 +61,11 @@ export default function CoachingPage() {
             </div>
           </div>
 
-          <p className="text-sm text-accent font-medium">
-            Currently accepting 2 people.
+          <p className="text-copy-3 text-xs">
+            Coaching available in German, English &amp; Turkish.
+            <br />
+            Coaching auf Deutsch, Englisch &amp; Türkisch verfügbar.
           </p>
-        </div>
-      </section>
-
-      {/* What to expect */}
-      <section id="how-it-works" aria-labelledby="how-heading" className="scroll-mt-16 lg:scroll-mt-18 py-16 lg:py-24 border-b border-edge bg-surface">
-        <div className="site-container">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
-            <div>
-              <h2 id="how-heading" className="text-2xl sm:text-3xl font-bold text-copy mb-4">
-                What to expect.
-              </h2>
-              <p className="text-copy-2 text-sm leading-relaxed">
-                A small pilot, not a fixed program. Some weeks go well. Some
-                don&apos;t. Both get planned for.
-              </p>
-            </div>
-
-            <div className="lg:col-span-2 space-y-8">
-              {/* Not for */}
-              <div>
-                <p className="text-[10px] tracking-widest uppercase text-copy-3 font-medium mb-4">
-                  Not suitable for
-                </p>
-                <ul className="space-y-1.5">
-                  {coachingNotFor.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm text-copy-3">
-                      <XCircle size={13} className="shrink-0 mt-0.5" aria-hidden="true" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Disclaimer */}
-              <p className="text-xs text-copy-3 leading-relaxed border-l-2 border-edge pl-4">
-                {coachingDisclaimer}
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -125,6 +87,15 @@ export default function CoachingPage() {
                 </p>
               </div>
 
+              <div className="inline-flex items-center gap-2 bg-accent-dim border border-accent px-3 py-1.5">
+                <span className="relative flex h-2 w-2 shrink-0">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-75 animate-ping" aria-hidden="true" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
+                </span>
+                <span className="text-xs font-semibold text-accent">
+                  First 2 sessions free — 7 spots left
+                </span>
+              </div>
             </div>
 
             {/* Right: form */}

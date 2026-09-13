@@ -17,7 +17,7 @@ export const faqItems: FaqItem[] = [
     id: 'coaching-type',
     question: 'What does Work With Me involve?',
     answer:
-      "It's a small pilot for five people who want accountability, guidance, and a structured plan to become more consistent runners — 3 spots are already booked. It's tailored to your starting point: starting from scratch, returning after a break, or training for your next goal.",
+      "It's coaching for ten people who want accountability, guidance, and a structured plan to become more consistent runners — 3 spots are already booked. It's tailored to your starting point: starting from scratch, returning after a break, or training for your next goal.",
   },
   {
     id: 'beginners',

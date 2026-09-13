@@ -62,8 +62,10 @@ export function CoachingSection() {
 
             {/* CTA */}
             <div className="space-y-3">
-              <p className="text-xs text-accent font-medium">
-                Currently accepting 2 people.
+              <p className="text-copy-3 text-xs">
+                Coaching available in German, English &amp; Turkish.
+                <br />
+                Coaching auf Deutsch, Englisch &amp; Türkisch verfügbar.
               </p>
               <Button href="/coaching#apply" size="lg" variant="primary">
                 Apply to Work With Me

@@ -1,5 +1,4 @@
 import { siteConfig } from '@/data/site'
-import { socials } from '@/data/socials'
 
 export interface BioLink {
   id: string
@@ -14,12 +13,7 @@ export interface BioLink {
  */
 export const bioLinks: BioLink[] = [
   { id: 'gear', label: 'See what I use', href: '/products' },
-  { id: 'coaching', label: 'Want to build the habit? Apply for free coaching', href: '/coaching#apply' },
+  { id: 'coaching', label: 'Want to build the habit?', href: '/coaching#apply' },
+  { id: 'training-plan', label: 'Get my hybrid training plan — CHF 4.95', href: 'https://goki07.gumroad.com/l/eqctfr', external: true },
   { id: 'website', label: 'Visit the website', href: siteConfig.url, external: true },
-  ...socials.map((s) => ({
-    id: s.id,
-    label: s.label,
-    href: s.href,
-    external: true,
-  })),
 ]

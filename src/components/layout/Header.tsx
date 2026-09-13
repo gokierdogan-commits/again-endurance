@@ -98,7 +98,7 @@ export function Header() {
                 href="/coaching#apply"
                 className="hidden lg:inline-flex items-center gap-2 px-5 py-2 text-sm font-medium text-bg bg-accent hover:bg-accent-2 transition-colors duration-150"
               >
-                Apply
+                Apply for Coaching
               </Link>
 
               <button

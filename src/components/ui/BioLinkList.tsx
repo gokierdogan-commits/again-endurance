@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowUpRight, Globe, ShoppingBag, HeartHandshake } from 'lucide-react'
+import { ArrowUpRight, Globe, ShoppingBag, HeartHandshake, Dumbbell } from 'lucide-react'
 import { siInstagram, siStrava, siTiktok, siYoutube } from 'simple-icons'
 import { bioLinks } from '@/data/links'
 import { trackEvent, AnalyticsEvent } from '@/lib/analytics'
@@ -12,6 +12,7 @@ const lucideIcons = {
   website: Globe,
   gear: ShoppingBag,
   coaching: HeartHandshake,
+  'training-plan': Dumbbell,
 } as const
 
 const brandIcons = {

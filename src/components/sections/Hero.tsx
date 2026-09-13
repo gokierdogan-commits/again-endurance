@@ -72,9 +72,13 @@ export function Hero() {
                 <ArrowRight size={15} aria-hidden="true" />
               </Button>
             </div>
-            <p className="text-copy-3 text-xs -mt-4">
-              A small pilot helping 5 people build a consistent running habit — 3 spots already booked.
-            </p>
+            <div className="-mt-2">
+              <p className="text-copy-3 text-xs">
+                Coaching available in German, English &amp; Turkish.
+                <br />
+                Coaching auf Deutsch, Englisch &amp; Türkisch verfügbar.
+              </p>
+            </div>
 
             {/* Social links */}
             <SocialLinks />

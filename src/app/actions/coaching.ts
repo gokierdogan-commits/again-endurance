@@ -3,12 +3,8 @@
 interface CoachingFormData {
   name: string
   email: string
-  country: string
   fitnessLevel: string
-  hasRunBefore: string
-  biggestChallenge: string
-  goal: string
-  whyWorkWithMe: string
+  goal: boolean
   consent: boolean
   website?: string
 }
