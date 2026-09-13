@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { MapPin, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { SocialLinks } from '@/components/ui/SocialLinks'
 import { siteConfig } from '@/data/site'
 
 export function Hero() {
@@ -67,8 +66,12 @@ export function Hero() {
               <Button href="/products" size="lg" variant="primary">
                 See what I use
               </Button>
-              <Button href="/coaching#apply" size="lg" variant="ghost">
-                Apply to Work With Me
+              <Button href="/coaching#apply" size="lg" variant="primary">
+                Apply for Coaching
+                <ArrowRight size={15} aria-hidden="true" />
+              </Button>
+              <Button href="https://goki07.gumroad.com/l/eqctfr" size="lg" variant="primary" external>
+                Get the Hybrid Plan
                 <ArrowRight size={15} aria-hidden="true" />
               </Button>
             </div>
@@ -79,9 +82,6 @@ export function Hero() {
                 Coaching auf Deutsch, Englisch &amp; Türkisch verfügbar.
               </p>
             </div>
-
-            {/* Social links */}
-            <SocialLinks />
           </div>
         </div>
       </div>

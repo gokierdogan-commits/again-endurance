@@ -7,7 +7,6 @@ import { ProductCriteria } from '@/components/sections/ProductCriteria'
 import { CoachingSection } from '@/components/sections/CoachingSection'
 import { TrainingPlanPromo } from '@/components/sections/TrainingPlanPromo'
 import { FAQ } from '@/components/sections/FAQ'
-import { PartnershipContact } from '@/components/sections/PartnershipContact'
 import { siteConfig } from '@/data/site'
 
 export const metadata: Metadata = {
@@ -23,11 +22,10 @@ export default function HomePage() {
       <ProofStrip />
       <About />
       <FeaturedProducts />
-      <ProductCriteria />
-      <CoachingSection />
       <TrainingPlanPromo />
       <FAQ />
-      <PartnershipContact />
+      <ProductCriteria />
+      <CoachingSection />
     </>
   )
 }

@@ -68,7 +68,7 @@ export function CoachingSection() {
                 Coaching auf Deutsch, Englisch &amp; Türkisch verfügbar.
               </p>
               <Button href="/coaching#apply" size="lg" variant="primary">
-                Apply to Work With Me
+                Apply for Coaching
                 <ArrowRight size={15} aria-hidden="true" />
               </Button>
             </div>

@@ -15,10 +15,10 @@ export function Footer() {
   return (
     <footer className="bg-surface border-t border-edge" aria-label="Site footer">
       <div className="site-container py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-12">
 
           {/* Brand */}
-          <div className="sm:col-span-2 lg:col-span-1 space-y-4">
+          <div className="space-y-4">
             <Link
               href="/"
               className="inline-block text-2xl font-bold text-copy tracking-tight hover:text-accent transition-colors"
@@ -40,31 +40,9 @@ export function Footer() {
             <ul className="space-y-2.5">
               {[
                 { href: '/products', label: 'My Gear' },
-                { href: '/coaching', label: 'Work With Me' },
+                { href: '/coaching#apply', label: 'Apply for Coaching' },
                 { href: '/#about', label: 'About' },
                 { href: '/#faq', label: 'FAQ' },
-              ].map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-copy-2 hover:text-accent transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Work With Me */}
-          <nav aria-label="Work With Me" className="space-y-4">
-            <p className="text-[10px] tracking-widest uppercase text-copy-3 font-medium">
-              Work With Me
-            </p>
-            <ul className="space-y-2.5">
-              {[
-                { href: '/coaching#apply', label: 'Apply' },
-                { href: '/#partnerships', label: 'Partnerships' },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

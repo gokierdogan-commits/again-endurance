@@ -31,7 +31,7 @@ export default function CoachingPage() {
           </p>
 
           <Button href="#apply" size="lg" variant="primary" className="mb-8">
-            Apply to Work With Me
+            Apply for Coaching
             <ArrowRight size={15} aria-hidden="true" />
           </Button>
 
@@ -84,9 +84,8 @@ export default function CoachingPage() {
                   Apply to work with me.
                 </h2>
                 <p className="text-copy-2 text-sm leading-relaxed">
-                  Tell me a bit about yourself and where you&apos;re starting from.
-                  I&apos;ll read every application myself and reach out if it looks
-                  like a good fit.
+                  A few quick details. I&apos;ll personally review every application
+                  and reach out if it looks like a good fit.
                 </p>
               </div>
 

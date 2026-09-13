@@ -14,9 +14,9 @@ export const siteConfig = {
   /** Short positioning statement used in OG and meta descriptions */
   tagline: 'From 138 kg to the long game.',
 
-  /** Supporting line shown in hero */
+  /** Supporting line shown in hero, right above the CTA buttons */
   supportingLine:
-    "Everything here is something I've actually used, for months, in actual training.",
+    "The gear, the coaching, and the plan are all built from what actually worked for me, not theory.",
 
   brand: 'Again.',
   location: 'Zürich, Switzerland',

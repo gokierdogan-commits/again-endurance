@@ -47,6 +47,6 @@ export const faqItems: FaqItem[] = [
     id: 'brands',
     question: 'How can brands contact you?',
     answer:
-      'Use the partnership enquiry form at the bottom of this page, or send a message via Instagram. I am open to product testing, brand collaborations, content partnerships, and event appearances.',
+      'Send a message via Instagram. I am open to product testing, brand collaborations, content partnerships, and event appearances.',
   },
 ]
