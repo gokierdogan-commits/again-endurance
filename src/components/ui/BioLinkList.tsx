@@ -3,10 +3,24 @@
 import Link from 'next/link'
 import { ArrowUpRight, Globe, ShoppingBag, HeartHandshake, Dumbbell } from 'lucide-react'
 import { siInstagram, siStrava, siTiktok, siYoutube } from 'simple-icons'
-import { bioLinks } from '@/data/links'
+import { bioLinks, type BioLink } from '@/data/links'
 import { trackEvent, AnalyticsEvent } from '@/lib/analytics'
+import { cn } from '@/lib/utils'
 
-const linkClass = 'group flex items-center gap-3 w-full px-5 py-4 border border-edge text-copy hover:border-accent hover:text-accent transition-colors duration-150'
+const baseLinkClass =
+  'group flex items-center gap-3 w-full min-h-[3.25rem] px-5 py-3.5 border transition-colors duration-150'
+
+const variantClass: Record<'default' | 'primary' | 'secondary', string> = {
+  default: 'border-edge text-copy hover:border-accent hover:text-accent',
+  secondary: 'border-accent text-accent bg-transparent hover:bg-accent-dim',
+  primary: 'border-accent bg-accent text-bg hover:bg-accent-2 hover:border-accent-2 font-semibold',
+}
+
+const arrowClass: Record<'default' | 'primary' | 'secondary', string> = {
+  default: 'text-copy-3 group-hover:text-accent',
+  secondary: 'text-accent',
+  primary: 'text-bg',
+}
 
 const lucideIcons = {
   website: Globe,
@@ -54,18 +68,24 @@ export function BioLinkList() {
 
   return (
     <nav aria-label="Links" className="w-full space-y-3">
-      {bioLinks.map((link) => {
+      {bioLinks.map((link: BioLink) => {
+        const tier = link.variant ?? 'default'
+
         const content = (
           <>
             <LinkIcon id={link.id} />
-            <span className="text-sm font-medium tracking-wide flex-1 text-left">{link.label}</span>
+            <span className="text-sm leading-snug font-medium tracking-wide flex-1 text-left">
+              {link.label}
+            </span>
             <ArrowUpRight
               size={16}
-              className="text-copy-3 group-hover:text-accent transition-colors duration-150 shrink-0"
+              className={cn('transition-colors duration-150 shrink-0', arrowClass[tier])}
               aria-hidden="true"
             />
           </>
         )
+
+        const className = cn(baseLinkClass, variantClass[tier])
 
         if (link.external) {
           return (
@@ -75,7 +95,7 @@ export function BioLinkList() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => handleClick(link.label)}
-              className={linkClass}
+              className={className}
             >
               {content}
             </a>
@@ -87,7 +107,7 @@ export function BioLinkList() {
             key={link.id}
             href={link.href}
             onClick={() => handleClick(link.label)}
-            className={linkClass}
+            className={className}
           >
             {content}
           </Link>
