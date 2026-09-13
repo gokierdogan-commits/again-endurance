@@ -14,7 +14,7 @@ const stages = [
   {
     id: 'transformation',
     label: 'Transformation',
-    text: 'Running started around 110 kg. Short, slow runs at first. Then a half marathon. A marathon. A 100 km ultra, seven half marathons in seven days, a 66 km relay around the lake, all within about a year. Not one breakthrough. Just repeated decisions.',
+    text: 'Running started around 110 kg. Short, slow runs at first. Then a half marathon. A marathon. My first ultra, 66 km around the lake. Then seven half marathons in seven days. Then a 100 km ultra. All within about a year. Not one breakthrough. Just repeated decisions.',
   },
   {
     id: 'mission',
@@ -81,7 +81,7 @@ export function About() {
                 <div className="flex gap-4">
                   <dt className="text-xs tracking-widest uppercase text-copy-3 w-28 shrink-0">Focus</dt>
                   <dd className="text-sm text-copy-2">
-                    Training for the Jungfrau Marathon, slowly rebuilding after an injury toward ultra distances
+                    Rebuilding toward faster road marathons and future ultra distances.
                   </dd>
                 </div>
                 <div className="flex gap-4">

@@ -9,8 +9,9 @@ export function AffiliateDisclosure({ className, compact = false }: AffiliateDis
   if (compact) {
     return (
       <p className={cn('text-xs text-copy-3 leading-relaxed', className)}>
-        Some links are affiliate links. I may earn a commission at no extra cost to you.
-        I only list products I genuinely use.
+        Affiliate disclosure: Some links are affiliate links. I may earn a small
+        commission at no additional cost to you. I clearly distinguish between
+        equipment I personally use and alternative recommendations.
       </p>
     )
   }
@@ -24,10 +25,10 @@ export function AffiliateDisclosure({ className, compact = false }: AffiliateDis
       )}
     >
       <p className="text-xs text-copy-3 leading-relaxed max-w-2xl">
-        <strong className="text-copy-2 font-medium">Affiliate disclosure.</strong>{' '}
-        Some links on this page are affiliate links. I may earn a small commission if you
-        purchase through them, at no additional cost to you. I only list products I have
-        personally used and would genuinely recommend based on real training experience.
+        <strong className="text-copy-2 font-medium">Affiliate disclosure:</strong>{' '}
+        Some links are affiliate links. I may earn a small commission at no
+        additional cost to you. I clearly distinguish between equipment I
+        personally use and alternative recommendations based on features and value.
       </p>
     </aside>
   )

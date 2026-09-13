@@ -38,7 +38,7 @@ export function CompactProductCard({ product, variant }: CompactProductCardProps
         target="_blank"
         rel="noopener noreferrer nofollow"
         onClick={handleClick}
-        aria-label={`${product.name} — ${product.useCase ?? 'view'} (opens in new tab)`}
+        aria-label={`${product.name}, ${product.useCase ?? 'view'} (opens in new tab)`}
         className="group shrink-0 w-32 sm:w-36 border border-edge bg-surface p-3 hover:border-copy-3 transition-colors duration-150"
       >
         <div className="relative aspect-square w-full mb-3 bg-surface-2 overflow-hidden">

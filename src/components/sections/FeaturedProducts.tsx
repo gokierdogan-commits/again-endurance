@@ -6,11 +6,13 @@ import { ArrowRight } from 'lucide-react'
 import { CategoryFilter } from '@/components/ui/CategoryFilter'
 import { ProductGrid } from '@/components/ui/ProductGrid'
 import { AffiliateDisclosure } from '@/components/ui/AffiliateDisclosure'
-import { categories, products } from '@/data/products'
+import { categories, products, getFeaturedProducts } from '@/data/products'
 import { isValidAffiliateUrl } from '@/lib/utils'
 
 interface FeaturedProductsProps {
-  /** When true, shows all products (for /products page) */
+  /** When true, shows the full filterable catalogue (for /products). When
+   * false (homepage), shows a small, fixed 4-item teaser instead — the
+   * gear supports the brand here, it doesn't dominate it. */
   showAll?: boolean
 }
 
@@ -21,27 +23,24 @@ export function FeaturedProducts({ showAll = false }: FeaturedProductsProps) {
   // Draft products (no real affiliate link yet) are hidden from visitors.
   // Append ?preview=1 to the URL to see them while you're still filling them in.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPreviewMode(new URLSearchParams(window.location.search).get('preview') === '1')
   }, [])
 
-  const filtered = (showAll ? products : products.filter((p) => p.available))
+  const catalogue = products
     .filter((p) => previewMode || isValidAffiliateUrl(p.affiliateUrl))
     .filter((p) => activeCategory === 'all' || p.category === activeCategory)
 
-  return (
-    <section
-      id="products"
-      aria-labelledby="products-heading"
-      className="py-20 lg:py-28 border-b border-edge"
-    >
-      <div className="site-container space-y-10">
+  const featured = getFeaturedProducts()
 
-        {/* Header — the /products page already has its own hero with this title, so skip it here when showAll */}
-        {showAll ? (
-          <h2 id="products-heading" className="sr-only">
-            What I use.
-          </h2>
-        ) : (
+  if (!showAll) {
+    return (
+      <section
+        id="products"
+        aria-labelledby="products-heading"
+        className="py-20 lg:py-28 border-b border-edge"
+      >
+        <div className="site-container space-y-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div>
               <p className="text-[10px] tracking-widest uppercase text-accent font-medium mb-3">
@@ -51,19 +50,37 @@ export function FeaturedProducts({ showAll = false }: FeaturedProductsProps) {
                 What I use.
               </h2>
               <p className="mt-3 text-copy-2 max-w-xl">
-                Equipment tested across marathons, ultras, and the easy days between.
-                Not reviews. Just what&apos;s still in my kit months later.
+                A few things that earned a permanent spot in my kit. The full
+                range is on the gear page.
               </p>
             </div>
             <Link
               href="/products"
               className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-2 transition-colors shrink-0"
             >
-              View all gear
+              View All Gear
               <ArrowRight size={14} aria-hidden="true" />
             </Link>
           </div>
-        )}
+
+          <ProductGrid products={featured} />
+
+          <AffiliateDisclosure compact />
+        </div>
+      </section>
+    )
+  }
+
+  return (
+    <section
+      id="products"
+      aria-labelledby="products-heading"
+      className="py-20 lg:py-28 border-b border-edge"
+    >
+      <div className="site-container space-y-10">
+        <h2 id="products-heading" className="sr-only">
+          What I use.
+        </h2>
 
         {/* Category filter */}
         <CategoryFilter
@@ -79,8 +96,8 @@ export function FeaturedProducts({ showAll = false }: FeaturedProductsProps) {
         )}
 
         {/* Product grid */}
-        {filtered.length > 0 ? (
-          <ProductGrid products={filtered} />
+        {catalogue.length > 0 ? (
+          <ProductGrid products={catalogue} />
         ) : (
           <div className="py-16 text-center text-copy-3 text-sm border border-edge">
             No products in this category yet.

@@ -16,13 +16,16 @@ export const siteConfig = {
 
   /** Supporting line shown in hero, right above the CTA buttons */
   supportingLine:
-    "The gear, the coaching, and the plan are all built from what actually worked for me, not theory.",
+    "The plan, coaching, and gear are all built from what actually worked for me, from 138 kg to marathons and a 100 km ultra.",
 
   brand: 'Again.',
   location: 'Zürich, Switzerland',
 
   /** Coaching enquiries */
   coachingEmail: 'TODO_coaching@again-endurance.com',
+
+  /** Free-session spots remaining — the only place this number needs updating. */
+  coachingSpotsLeft: 7,
 
   /** Brand partnerships and press */
   partnershipEmail: 'TODO_partnerships@again-endurance.com',

@@ -14,6 +14,6 @@ export interface BioLink {
 export const bioLinks: BioLink[] = [
   { id: 'gear', label: 'See what I use', href: '/products' },
   { id: 'coaching', label: 'Want to build the habit?', href: '/coaching#apply' },
-  { id: 'training-plan', label: 'Get my hybrid training plan — CHF 4.95', href: 'https://goki07.gumroad.com/l/eqctfr', external: true },
+  { id: 'training-plan', label: 'Get my hybrid training plan (CHF 4.95)', href: 'https://goki07.gumroad.com/l/eqctfr', external: true },
   { id: 'website', label: 'Visit the website', href: siteConfig.url, external: true },
 ]

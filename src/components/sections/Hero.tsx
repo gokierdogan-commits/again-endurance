@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { MapPin, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { siteConfig } from '@/data/site'
@@ -20,7 +21,7 @@ export function Hero() {
                 alt="Gökhan Erdogan"
                 fill
                 priority
-                className="object-cover"
+                className="object-cover brightness-110 contrast-105"
                 sizes="(max-width: 1024px) 360px, 40vw"
               />
             </div>
@@ -61,19 +62,22 @@ export function Hero() {
               {siteConfig.supportingLine}
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4">
-              <Button href="/products" size="lg" variant="primary">
-                See what I use
-              </Button>
+            {/* CTAs — coaching is the strongest CTA, the plan secondary, gear tertiary */}
+            <div className="flex flex-wrap items-center gap-4">
               <Button href="/coaching#apply" size="lg" variant="primary">
                 Apply for Coaching
                 <ArrowRight size={15} aria-hidden="true" />
               </Button>
-              <Button href="https://goki07.gumroad.com/l/eqctfr" size="lg" variant="primary" external>
+              <Button href="https://goki07.gumroad.com/l/eqctfr" size="lg" variant="outline" external>
                 Get the Hybrid Plan
-                <ArrowRight size={15} aria-hidden="true" />
               </Button>
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-1.5 text-sm text-copy-2 hover:text-accent transition-colors duration-150"
+              >
+                Explore my gear
+                <ArrowRight size={13} aria-hidden="true" />
+              </Link>
             </div>
             <div className="-mt-2">
               <p className="text-copy-3 text-xs">

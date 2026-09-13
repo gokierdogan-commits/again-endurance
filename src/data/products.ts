@@ -113,7 +113,7 @@ export const products: Product[] = [
     name: 'On Cloudmonster 2',
     category: 'running-shoes',
     image: '/images/products/on-cloudmonster-2.jpg',
-    shortDescription: 'The shoe I wore for my 66 km relay around the lake.',
+    shortDescription: 'The shoe I wore for my first ultra, 66 km around the lake.',
     whyIUseIt: 'Held up for the full 66 km without breaking down, which is the only test that matters for a shoe like this.',
     badge: '66 km Tested',
     role: 'My Ultra Shoe',
@@ -207,8 +207,8 @@ export const products: Product[] = [
     name: 'Garmin Forerunner 265',
     category: 'running-technology',
     image: '/images/products/garmin-forerunner-265-padded.png',
-    shortDescription: 'A cheaper alternative to the Fenix if you want solid training data without the price tag — not something I personally use.',
-    whyIUseIt: 'I train with the Fenix myself, but I’d recommend this one if you’re on a smaller budget — pace, HR, and recovery tracking without paying Fenix money.',
+    shortDescription: 'A cheaper alternative to the Fenix if you want solid training data without the price tag. Not something I personally use.',
+    whyIUseIt: 'I train with the Fenix myself, but I’d recommend this one if you’re on a smaller budget: pace, HR, and recovery tracking without paying Fenix money.',
     badge: 'Budget Pick',
     useCase: 'Daily training',
     affiliateUrl: 'https://amzn.to/4x5dTzi',
@@ -222,7 +222,7 @@ export const products: Product[] = [
     name: 'Garmin Forerunner 165 Music',
     category: 'running-technology',
     image: '/images/products/garmin-forerunner-165-music-padded.png',
-    shortDescription: 'The watch I’d point a beginner runner to — GPS and music without paying for features you won’t use yet.',
+    shortDescription: 'A beginner-friendly watch with GPS and music, without paying for features you won’t use yet.',
     whyIUseIt: 'Not what I train with day to day, but solid value if you’re starting out and don’t need multi-sport tracking or ultra-distance battery life.',
     badge: 'Great Starter Watch',
     useCase: 'Getting started',
@@ -237,7 +237,7 @@ export const products: Product[] = [
     name: 'Apple Watch SE 3',
     category: 'running-technology',
     image: '/images/products/apple-watch-se-3-padded.png',
-    shortDescription: 'A cheaper, everyday smartwatch option if you don’t need a dedicated running watch — not something I personally use.',
+    shortDescription: 'A cheaper, everyday smartwatch option if you don’t need a dedicated running watch. Not something I personally use.',
     whyIUseIt: 'I train with the Fenix, not this one, but if you just want notifications and basic health tracking without running-watch pricing, it’s a solid budget pick.',
     badge: 'Budget Pick',
     useCase: 'Everyday wear',
@@ -486,9 +486,22 @@ export function getProductsByCategory(categoryId: string): Product[] {
   return products.filter((p) => p.category === categoryId)
 }
 
-/** Helper: get featured products (used for the homepage teaser) */
+/**
+ * Curated homepage teaser: one long-run shoe, one race shoe, one watch.
+ * Deliberately a fixed, small set (by id, not name) so the homepage
+ * doesn't turn into a second product catalogue; the full range still
+ * lives on /products.
+ */
+const HOMEPAGE_FEATURED_IDS = [
+  'shoe-asics-nimbus-28',
+  'shoe-asics-metaspeed-edge',
+  'watch-garmin-fenix-8',
+]
+
 export function getFeaturedProducts(): Product[] {
-  return products.filter((p) => p.featured && p.available)
+  return HOMEPAGE_FEATURED_IDS
+    .map((id) => products.find((p) => p.id === id))
+    .filter((p): p is Product => p !== undefined && isPublished(p))
 }
 
 /** "The Gear Behind My 100 km" — only products with explicit evidence in their copy. */

@@ -21,11 +21,11 @@ export default function HomePage() {
       <Hero />
       <ProofStrip />
       <About />
-      <FeaturedProducts />
       <TrainingPlanPromo />
-      <FAQ />
-      <ProductCriteria />
       <CoachingSection />
+      <FeaturedProducts />
+      <ProductCriteria />
+      <FAQ />
     </>
   )
 }

@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
-import { Check, ArrowRight } from 'lucide-react'
+import { Check, ArrowRight, X } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { CoachingForm } from '@/components/ui/CoachingForm'
+import { Testimonials } from '@/components/sections/Testimonials'
+import { firstSessionsInclude, afterFreeSessions, coachingNotFor, coachingDisclaimer } from '@/data/coaching'
 import { siteConfig } from '@/data/site'
 
 const whoFor = ['Beginners', 'Returning after a break', 'Struggling with consistency']
@@ -72,6 +74,57 @@ export default function CoachingPage() {
         </div>
       </section>
 
+      {/* What the offer actually includes */}
+      <section aria-labelledby="sessions-heading" className="py-16 lg:py-24 border-b border-edge bg-surface">
+        <div className="site-container max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-12">
+          <div>
+            <h2 id="sessions-heading" className="text-2xl sm:text-3xl font-bold text-copy mb-5">
+              What the first two sessions include.
+            </h2>
+            <ul className="space-y-2.5">
+              {firstSessionsInclude.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm text-copy-2">
+                  <Check size={14} className="text-accent shrink-0 mt-0.5" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-copy mb-5">
+              What happens after the free sessions?
+            </h2>
+            <p className="text-copy-2 text-sm leading-relaxed">
+              {afterFreeSessions}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials — renders nothing until real quotes exist */}
+      <Testimonials />
+
+      {/* Who this isn't for */}
+      <section aria-labelledby="not-for-heading" className="py-16 lg:py-24 border-b border-edge">
+        <div className="site-container max-w-4xl">
+          <h2 id="not-for-heading" className="text-2xl sm:text-3xl font-bold text-copy mb-5">
+            Not for you if…
+          </h2>
+          <ul className="space-y-2.5 mb-8">
+            {coachingNotFor.map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm text-copy-2">
+                <X size={14} className="text-copy-3 shrink-0 mt-0.5" aria-hidden="true" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-xs text-copy-3 leading-relaxed max-w-2xl">
+            {coachingDisclaimer}
+          </p>
+        </div>
+      </section>
+
       {/* Application form */}
       <section id="apply" aria-labelledby="form-heading" className="scroll-mt-16 lg:scroll-mt-18 py-16 lg:py-24">
         <div className="site-container">
@@ -95,7 +148,7 @@ export default function CoachingPage() {
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
                 </span>
                 <span className="text-xs font-semibold text-accent">
-                  First 2 sessions free — 7 spots left
+                  First 2 sessions free. {siteConfig.coachingSpotsLeft} spots left.
                 </span>
               </div>
             </div>
