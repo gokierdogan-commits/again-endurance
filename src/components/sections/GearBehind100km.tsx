@@ -15,9 +15,9 @@ export function GearBehind100km() {
           <p className="text-[10px] tracking-widest uppercase text-accent font-medium mb-3">
             100 km
           </p>
-          <h2 id="100km-gear-heading" className="text-3xl sm:text-4xl font-black text-copy tracking-tighter mb-3">
+          <h1 id="100km-gear-heading" className="text-3xl sm:text-4xl font-black text-copy tracking-tighter mb-3">
             The gear behind my 100 km.
-          </h2>
+          </h1>
           <p className="text-copy-2 max-w-xl">
             Key gear I used for my 100 km run.
           </p>

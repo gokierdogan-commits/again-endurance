@@ -25,6 +25,11 @@ export function ProductCriteria() {
               worth the price next to what I&apos;ve already tried. If it&apos;s still
               in my kit six months later, that&apos;s the only review that matters.
             </p>
+            <p className="text-copy-2 leading-relaxed mt-4">
+              Where I have personally used something, I say so. Where I haven&apos;t,
+              I recommend it as an alternative based on its features and value, not
+              as gear I&apos;ve trained in myself.
+            </p>
           </div>
         </div>
       </div>
