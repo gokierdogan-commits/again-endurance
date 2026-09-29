@@ -4,7 +4,7 @@ interface CoachingFormData {
   name: string
   email: string
   fitnessLevel: string
-  goal: boolean
+  goals: string[]
   consent: boolean
   website?: string
 }
@@ -23,7 +23,7 @@ export async function submitCoachingApplication(
       name: data.name,
       email: data.email,
       fitnessLevel: data.fitnessLevel,
-      goal: data.goal,
+      goals: data.goals,
     })
     return { success: true }
   }

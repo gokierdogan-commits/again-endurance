@@ -10,13 +10,20 @@ import { submitCoachingApplication } from '@/app/actions/coaching'
 import { trackEvent, AnalyticsEvent } from '@/lib/analytics'
 import { cn } from '@/lib/utils'
 
-const fitnessLevels = ['just-starting', 'returning', 'occasionally-active', 'regularly-active'] as const
+const fitnessLevels = ['beginner', 'experienced', 'occasionally-active', 'regularly-active-inconsistent'] as const
+
+const coachingFocusAreas = [
+  'Building a consistent running habit',
+  'Improving as a runner (speed, distance, races)',
+  'Strength training and building muscle',
+  'Becoming a hybrid athlete (running + strength)',
+] as const
 
 const schema = z.object({
   name:         z.string().min(2, 'Please enter your full name.'),
   email:        z.string().email('Please enter a valid email address.'),
   fitnessLevel: z.enum(fitnessLevels, 'Please select your current fitness level.'),
-  goal:         z.boolean().refine((v) => v === true, 'Please confirm this is your goal.'),
+  goals:        z.array(z.string()).min(1, 'Please select at least one area.'),
   consent:      z.boolean().refine((v) => v === true, 'You must agree to be contacted before submitting.'),
   website:      z.string().max(0).optional(), // honeypot
 })
@@ -142,10 +149,10 @@ export function CoachingForm() {
           {...register('fitnessLevel')}
         >
           <option value="" disabled>Select…</option>
-          <option value="just-starting">Just starting out</option>
-          <option value="returning">Returning after a break</option>
+          <option value="beginner">Beginner</option>
+          <option value="experienced">Experienced</option>
           <option value="occasionally-active">Occasionally active</option>
-          <option value="regularly-active">Regularly active, but inconsistent</option>
+          <option value="regularly-active-inconsistent">Regularly active, but not consistent</option>
         </select>
         {errors.fitnessLevel && (
           <p id="fitness-error" role="alert" className={errorClass}>
@@ -154,30 +161,37 @@ export function CoachingForm() {
         )}
       </div>
 
-      {/* Goal + consent */}
-      <div className="space-y-4">
-        <label className="flex items-start gap-3 cursor-pointer group">
-          <input
-            type="checkbox"
-            className={cn(
-              'mt-0.5 w-4 h-4 shrink-0 border border-edge bg-surface-2',
-              'accent-accent cursor-pointer',
-              errors.goal && 'border-danger'
-            )}
-            aria-required="true"
-            aria-describedby={errors.goal ? 'goal-error' : undefined}
-            {...register('goal')}
-          />
-          <span className="text-sm text-copy-2 leading-relaxed">
-            I want to lose weight and start my running journey.
-          </span>
-        </label>
-        {errors.goal && (
-          <p id="goal-error" role="alert" className={errorClass}>
-            <AlertCircle size={13} className="mt-0.5 shrink-0" /> {errors.goal.message}
+      {/* Coaching focus areas + consent */}
+      <fieldset className="space-y-3">
+        <legend className={labelClass}>
+          What do you want coaching on? <span className="text-danger" aria-hidden="true">*</span>
+        </legend>
+        {coachingFocusAreas.map((area) => (
+          <label key={area} className="flex items-start gap-3 cursor-pointer group">
+            <input
+              type="checkbox"
+              value={area}
+              className={cn(
+                'mt-0.5 w-4 h-4 shrink-0 border border-edge bg-surface-2',
+                'accent-accent cursor-pointer',
+                errors.goals && 'border-danger'
+              )}
+              aria-describedby={errors.goals ? 'goals-error' : undefined}
+              {...register('goals')}
+            />
+            <span className="text-sm text-copy-2 leading-relaxed">
+              {area}
+            </span>
+          </label>
+        ))}
+        {errors.goals && (
+          <p id="goals-error" role="alert" className={errorClass}>
+            <AlertCircle size={13} className="mt-0.5 shrink-0" /> {errors.goals.message}
           </p>
         )}
+      </fieldset>
 
+      <div className="space-y-4">
         <label className="flex items-start gap-3 cursor-pointer group">
           <input
             type="checkbox"
