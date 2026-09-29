@@ -10,3 +10,11 @@ export const firstSessionsInclude = [
 
 export const afterFreeSessions =
   "If we both feel that coaching is a good fit, you can continue at the rate shown below. There is no obligation to continue, and no pressure either way."
+
+export const monthlyIncludes = [
+  'One call every week, 4 calls a month',
+  'A training plan built around your goals',
+  'The plan adjusted as your goals change',
+  'Daily check-ins to keep you on track',
+  'Available for questions every day from 8am to 10pm',
+]

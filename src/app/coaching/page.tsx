@@ -3,7 +3,7 @@ import { Check, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { CoachingForm } from '@/components/ui/CoachingForm'
 import { Testimonials } from '@/components/sections/Testimonials'
-import { firstSessionsInclude, afterFreeSessions } from '@/data/coaching'
+import { firstSessionsInclude, afterFreeSessions, monthlyIncludes } from '@/data/coaching'
 import { siteConfig } from '@/data/site'
 
 const whoFor = ['Beginners', 'People unsure what to focus on next', 'Runners who want to improve', 'People who want to build muscle or become a hybrid athlete']
@@ -119,6 +119,14 @@ export default function CoachingPage() {
             billed monthly. No packages, no upsells. You can cancel any
             month, and it does not renew automatically.
           </p>
+          <ul className="space-y-2 mb-6">
+            {monthlyIncludes.map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm text-copy-2">
+                <Check size={14} className="text-accent shrink-0 mt-0.5" aria-hidden="true" />
+                {item}
+              </li>
+            ))}
+          </ul>
           <p className="text-copy-2 text-sm leading-relaxed max-w-2xl mb-3">
             I&apos;m not a certified coach. What I bring is having done this
             myself, from 138 kg to a 100 km finish, and I&apos;m currently
