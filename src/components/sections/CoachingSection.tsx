@@ -3,7 +3,7 @@ import { ArrowRight, Check } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { coachingDisclaimer } from '@/data/coaching'
 
-const whoFor = ['Beginners', 'Returning after a break', 'Struggling with consistency']
+const whoFor = ['Beginners', 'People unsure what to focus on next', 'Runners who want to improve', 'People who want to build muscle or become a hybrid athlete']
 const whatYouGet = ['Accountability', 'Weekly feedback', 'Personal guidance', 'A habit that lasts']
 
 export function CoachingSection() {

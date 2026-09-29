@@ -9,10 +9,4 @@ export const firstSessionsInclude = [
 ]
 
 export const afterFreeSessions =
-  "If we both feel that coaching is a good fit, we'll discuss continued support, the format, and pricing. There is no obligation to continue."
-
-export const coachingNotFor = [
-  'You are looking for medical treatment or injury rehabilitation',
-  'You want an extreme short-term transformation',
-  'You are unwilling to build gradually and consistently',
-]
+  "If we both feel that coaching is a good fit, you can continue at the rate shown below. There is no obligation to continue, and no pressure either way."

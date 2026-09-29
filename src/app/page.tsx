@@ -3,7 +3,6 @@ import { Hero } from '@/components/sections/Hero'
 import { ProofStrip } from '@/components/sections/ProofStrip'
 import { About } from '@/components/sections/About'
 import { FeaturedProducts } from '@/components/sections/FeaturedProducts'
-import { ProductCriteria } from '@/components/sections/ProductCriteria'
 import { CoachingSection } from '@/components/sections/CoachingSection'
 import { TrainingPlanPromo } from '@/components/sections/TrainingPlanPromo'
 import { FAQ } from '@/components/sections/FAQ'
@@ -24,7 +23,6 @@ export default function HomePage() {
       <TrainingPlanPromo />
       <CoachingSection />
       <FeaturedProducts />
-      <ProductCriteria />
       <FAQ />
     </>
   )

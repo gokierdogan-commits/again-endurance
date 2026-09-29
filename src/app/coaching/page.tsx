@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { Check, ArrowRight, X } from 'lucide-react'
+import { Check, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { CoachingForm } from '@/components/ui/CoachingForm'
 import { Testimonials } from '@/components/sections/Testimonials'
-import { firstSessionsInclude, afterFreeSessions, coachingNotFor, coachingDisclaimer } from '@/data/coaching'
+import { firstSessionsInclude, afterFreeSessions } from '@/data/coaching'
 import { siteConfig } from '@/data/site'
 
-const whoFor = ['Beginners', 'Returning after a break', 'Struggling with consistency']
+const whoFor = ['Beginners', 'People unsure what to focus on next', 'Runners who want to improve', 'People who want to build muscle or become a hybrid athlete']
 const whatYouGet = ['Accountability', 'Weekly feedback', 'Personal guidance', 'A habit that lasts']
 
 export const metadata: Metadata = {
@@ -102,31 +102,41 @@ export default function CoachingPage() {
         </div>
       </section>
 
-      {/* Testimonials — renders nothing until real quotes exist */}
-      <Testimonials />
-
-      {/* Who this isn't for */}
-      <section aria-labelledby="not-for-heading" className="py-16 lg:py-24 border-b border-edge">
+      {/* Pricing */}
+      <section id="apply" aria-labelledby="pricing-heading" className="scroll-mt-16 lg:scroll-mt-18 py-16 lg:py-24 border-b border-edge">
         <div className="site-container max-w-4xl">
-          <h2 id="not-for-heading" className="text-2xl sm:text-3xl font-bold text-copy mb-5">
-            Not for you if…
+          <p className="text-[10px] tracking-widest uppercase text-accent font-medium mb-4">
+            Pricing
+          </p>
+          <h2 id="pricing-heading" className="text-2xl sm:text-3xl font-bold text-copy mb-5">
+            Simple, transparent pricing.
           </h2>
-          <ul className="space-y-2.5 mb-8">
-            {coachingNotFor.map((item) => (
-              <li key={item} className="flex items-start gap-2 text-sm text-copy-2">
-                <X size={14} className="text-copy-3 shrink-0 mt-0.5" aria-hidden="true" />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="text-xs text-copy-3 leading-relaxed max-w-2xl">
-            {coachingDisclaimer}
+          <p className="text-3xl font-bold text-accent mb-2">
+            CHF {siteConfig.coachingMonthlyPriceCHF} / month
+          </p>
+          <p className="text-copy-2 text-sm leading-relaxed max-w-2xl mb-6">
+            After your two free sessions, coaching continues at this rate,
+            billed monthly. No packages, no upsells. You can cancel any
+            month, and it does not renew automatically.
+          </p>
+          <p className="text-copy-2 text-sm leading-relaxed max-w-2xl mb-3">
+            I&apos;m not a certified coach. What I bring is having done this
+            myself, from 138 kg to a 100 km finish, and I&apos;m currently
+            coaching 2 people through the same process.
+          </p>
+          <p className="text-copy-3 text-xs leading-relaxed max-w-2xl">
+            This is a founding rate for my first clients. As I take on more
+            people and build a track record, the rate for new applicants will
+            go up. Yours won&apos;t, for as long as you stay.
           </p>
         </div>
       </section>
 
+      {/* Testimonials — renders nothing until real quotes exist */}
+      <Testimonials />
+
       {/* Application form */}
-      <section id="apply" aria-labelledby="form-heading" className="scroll-mt-16 lg:scroll-mt-18 py-16 lg:py-24">
+      <section aria-labelledby="form-heading" className="py-16 lg:py-24">
         <div className="site-container">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-start">
 
@@ -134,22 +144,12 @@ export default function CoachingPage() {
             <div className="space-y-6">
               <div>
                 <h2 id="form-heading" className="text-2xl sm:text-3xl font-bold text-copy mb-4">
-                  Apply to work with me.
+                  Tell me about yourself.
                 </h2>
                 <p className="text-copy-2 text-sm leading-relaxed">
                   A few quick details. I&apos;ll personally review every application
                   and reach out if it looks like a good fit.
                 </p>
-              </div>
-
-              <div className="inline-flex items-center gap-2 bg-accent-dim border border-accent px-3 py-1.5">
-                <span className="relative flex h-2 w-2 shrink-0">
-                  <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-75 animate-ping" aria-hidden="true" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" aria-hidden="true" />
-                </span>
-                <span className="text-xs font-semibold text-accent">
-                  First 2 sessions free. {siteConfig.coachingSpotsLeft} spots left.
-                </span>
               </div>
             </div>
 

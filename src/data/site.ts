@@ -24,8 +24,8 @@ export const siteConfig = {
   /** Coaching enquiries */
   coachingEmail: 'TODO_coaching@again-endurance.com',
 
-  /** Free-session spots remaining — the only place this number needs updating. */
-  coachingSpotsLeft: 7,
+  /** Ongoing monthly coaching rate after the two free sessions — the only place this number needs updating. */
+  coachingMonthlyPriceCHF: 79,
 
   /** Brand partnerships and press */
   partnershipEmail: 'TODO_partnerships@again-endurance.com',

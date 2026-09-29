@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { MapPin, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { siteConfig } from '@/data/site'
@@ -63,21 +62,20 @@ export function Hero() {
             </p>
 
             {/* CTAs — coaching is the strongest CTA, the plan secondary, gear tertiary */}
-            <div className="flex flex-wrap items-center gap-4">
-              <Button href="/coaching#apply" size="lg" variant="primary">
-                Apply for Coaching
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-wrap items-center gap-4">
+                <Button href="/coaching#apply" size="lg" variant="primary">
+                  Apply for Coaching
+                  <ArrowRight size={15} aria-hidden="true" />
+                </Button>
+                <Button href="https://goki07.gumroad.com/l/eqctfr" size="lg" variant="outline" external>
+                  Get the Hybrid Plan
+                </Button>
+              </div>
+              <Button href="/products" size="lg" variant="ghost" className="self-start">
+                Explore my gear
                 <ArrowRight size={15} aria-hidden="true" />
               </Button>
-              <Button href="https://goki07.gumroad.com/l/eqctfr" size="lg" variant="outline" external>
-                Get the Hybrid Plan
-              </Button>
-              <Link
-                href="/products"
-                className="inline-flex items-center gap-1.5 text-sm text-copy-2 hover:text-accent transition-colors duration-150"
-              >
-                Explore my gear
-                <ArrowRight size={13} aria-hidden="true" />
-              </Link>
             </div>
             <div className="-mt-2">
               <p className="text-copy-3 text-xs">

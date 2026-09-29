@@ -51,7 +51,11 @@ export function FeaturedProducts({ showAll = false }: FeaturedProductsProps) {
               </h2>
               <p className="mt-3 text-copy-2 max-w-xl">
                 A few things that earned a permanent spot in my kit. The full
-                range is on the gear page.
+                range is on the{' '}
+                <Link href="/products" className="text-accent hover:text-accent-2 transition-colors underline underline-offset-2">
+                  gear page
+                </Link>
+                .
               </p>
             </div>
             <Link
