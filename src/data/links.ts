@@ -20,4 +20,5 @@ export const bioLinks: BioLink[] = [
   { id: 'training-plan', label: 'Get the Hybrid Training Plan (CHF 4.95)', href: 'https://goki07.gumroad.com/l/eqctfr', external: true, variant: 'secondary' },
   { id: 'gear', label: 'See My Running Gear', href: '/products' },
   { id: 'website', label: 'Visit the Full Website', href: siteConfig.url, external: true },
+  { id: 'donate', label: 'Support My Races', href: 'https://www.raceforimpact.com/en/gokhan-erdogan', external: true },
 ]
